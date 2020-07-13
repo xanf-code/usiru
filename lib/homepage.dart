@@ -425,6 +425,20 @@ class _MyHomePageState extends State<MyHomePage>
                                             "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif"))
                               ],
                             ),
+                            LinearPercentIndicator(
+                              leading: Text('🛡'),
+                              width: 150,
+                              animationDuration: 1500,
+                              animation: true,
+                              percent: 0.10,
+                              linearGradient: LinearGradient(colors: [
+                                Colors.black,
+                                Colors.red,
+                                Colors.yellow
+                              ]),
+                              backgroundColor: Colors.black12,
+                              linearStrokeCap: LinearStrokeCap.roundAll,
+                            ),
                           ],
                         ),
                       ),
@@ -494,6 +508,20 @@ class _MyHomePageState extends State<MyHomePage>
                                         imageUrl:
                                             "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif"))
                               ],
+                            ),
+                            LinearPercentIndicator(
+                              leading: Text('🛡'),
+                              width: 150,
+                              animationDuration: 1500,
+                              animation: true,
+                              percent: 0.42,
+                              linearGradient: LinearGradient(colors: [
+                                Colors.black,
+                                Colors.red,
+                                Colors.yellow
+                              ]),
+                              backgroundColor: Colors.black12,
+                              linearStrokeCap: LinearStrokeCap.roundAll,
                             ),
                           ],
                         ),
@@ -565,6 +593,20 @@ class _MyHomePageState extends State<MyHomePage>
                                         "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif"))
                               ],
                             ),
+                            LinearPercentIndicator(
+                              leading: Text('🛡'),
+                              width: 150,
+                              animationDuration: 1500,
+                              animation: true,
+                              percent: 0.90,
+                              linearGradient: LinearGradient(colors: [
+                                Colors.black,
+                                Colors.red,
+                                Colors.yellow
+                              ]),
+                              backgroundColor: Colors.black12,
+                              linearStrokeCap: LinearStrokeCap.roundAll,
+                            ),
                           ],
                         ),
                       ),
@@ -634,6 +676,20 @@ class _MyHomePageState extends State<MyHomePage>
                                         imageUrl:
                                         "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
                               ],
+                            ),
+                            LinearPercentIndicator(
+                              leading: Text('🛡'),
+                              width: 150,
+                              animationDuration: 1500,
+                              animation: true,
+                              percent: 0.74,
+                              linearGradient: LinearGradient(colors: [
+                                Colors.black,
+                                Colors.red,
+                                Colors.yellow
+                              ]),
+                              backgroundColor: Colors.black12,
+                              linearStrokeCap: LinearStrokeCap.roundAll,
                             ),
                           ],
                         ),
