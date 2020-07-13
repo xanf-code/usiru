@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sparkline/flutter_sparkline.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:vector_math/vector_math_64.dart' as math;
 
 class MyHomePage extends StatefulWidget {
@@ -48,83 +47,70 @@ class _MyHomePageState extends State<MyHomePage>
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Colors.black,
-                Color(0xFF8e44ad),
-                Color(0xFFc0392b),
-                Colors.black54
-              ],
-            ),
-          ),
-          child: ListView(
-            physics: BouncingScrollPhysics(),
-            children: [
-              ClipPath(
-                clipper: MyClipper(),
-                child: Container(
-                  height: 500,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [
-                        Color(0xFF780206),
-                        Color(0xFF061161),
-                      ],
-                    ),
-                    image: DecorationImage(
-                      fit: BoxFit.cover,
-                      colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.2), BlendMode.dstATop),
-                      image: CachedNetworkImageProvider(
-                        "https://cdn.dribbble.com/users/1118956/screenshots/6608006/bnglr-final.jpg",
-                      ),
+        body: ListView(
+          physics: BouncingScrollPhysics(),
+          children: [
+            ClipPath(
+              clipper: MyClipper(),
+              child: Container(
+                height: 500,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF780206),
+                      Color(0xFF061161),
+                    ],
+                  ),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.2), BlendMode.dstATop),
+                    image: CachedNetworkImageProvider(
+                      "https://cdn.dribbble.com/users/1118956/screenshots/6608006/bnglr-final.jpg",
                     ),
                   ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            'Bengaluru, Karnataka',
-                            style: GoogleFonts.ubuntu(
-                                color: Colors.white.withOpacity(0.75),
-                                fontSize: 25,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.location_on,
-                                color: Colors.white.withOpacity(0.5),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'Hombegowda Nagar',
-                                style: GoogleFonts.ubuntu(
-                                    color: Colors.white.withOpacity(0.6),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          //                            CustomPaint(
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          'Bengaluru, Karnataka',
+                          style: GoogleFonts.ubuntu(
+                              color: Colors.white.withOpacity(0.75),
+                              fontSize: 25,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.location_on,
+                              color: Colors.white.withOpacity(0.5),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Hombegowda Nagar',
+                              style: GoogleFonts.ubuntu(
+                                  color: Colors.white.withOpacity(0.6),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        //                            CustomPaint(
 //                              child: Container(
 //                                height: 200.0,
 //                                width: 200.0,
@@ -166,235 +152,358 @@ class _MyHomePageState extends State<MyHomePage>
 //                              ),
 //                              painter: RadialPainter(progressDegrees),
 //                            ),
-                          CircularPercentIndicator(
-                            animationDuration: 1100,
-                            restartAnimation: true,
-                            animation: true,
-                            radius: 220.0,
-                            lineWidth: 15,
-                            percent: 0.80,
-                            linearGradient: LinearGradient(colors: [
-                              Colors.white,
-                              Colors.red,
-                              Colors.yellow
-                            ]),
-                            backgroundColor: Colors.white12,
-                            circularStrokeCap: CircularStrokeCap.round,
-                            center: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Column(
-                                  children: <Widget>[
-                                    CachedNetworkImage(
-                                      color: Colors.white.withOpacity(0.3),
-                                      imageUrl:
-                                          "https://cdn.onlinewebfonts.com/svg/img_378105.png",
-                                      height: 40,
-                                      width: 40,
-                                    ),
-                                    SizedBox(
-                                      height: 10.0,
-                                    ),
-                                    Text(
-                                      '135',
-                                      style: GoogleFonts.ubuntu(
-                                          fontSize: 40.0,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    SizedBox(
-                                      height: 3.0,
-                                    ),
-                                    Text(
-                                      'PM\u00B2\u2075',
-                                      style: GoogleFonts.ubuntu(
-                                          fontSize: 20.0, color: Colors.white),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Row(
+                        CircularPercentIndicator(
+                          animationDuration: 1100,
+                          restartAnimation: true,
+                          animation: true,
+                          radius: 220.0,
+                          lineWidth: 15,
+                          percent: 0.80,
+                          linearGradient: LinearGradient(colors: [
+                            Colors.white,
+                            Colors.red,
+                            Colors.yellow
+                          ]),
+                          backgroundColor: Colors.white12,
+                          circularStrokeCap: CircularStrokeCap.round,
+                          center: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Icon(
-                                Icons.timeline,
-                                color: Colors.white.withOpacity(0.5),
-                              ),
-                              SizedBox(
-                                width: 10,
-                              ),
-                              Text(
-                                'Last Updated 8:36pm',
-                                style: GoogleFonts.ubuntu(
-                                    color: Colors.white.withOpacity(0.6),
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.w500),
+                              Column(
+                                children: <Widget>[
+                                  CachedNetworkImage(
+                                    color: Colors.white.withOpacity(0.3),
+                                    imageUrl:
+                                        "https://cdn.onlinewebfonts.com/svg/img_378105.png",
+                                    height: 40,
+                                    width: 40,
+                                  ),
+                                  SizedBox(
+                                    height: 10.0,
+                                  ),
+                                  Text(
+                                    '135',
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 40.0,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  SizedBox(
+                                    height: 3.0,
+                                  ),
+                                  Text(
+                                    'PM\u00B2\u2075',
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 20.0, color: Colors.white),
+                                  ),
+                                ],
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.timeline,
+                              color: Colors.white.withOpacity(0.5),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              'Last Updated 8:36pm',
+                              style: GoogleFonts.ubuntu(
+                                  color: Colors.white.withOpacity(0.6),
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 22.0, right: 22, bottom: 10),
+              child: Container(
+                height: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0, 4),
+                      blurRadius: 4,
+                    ),
+                    BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0, -6),
+                      blurRadius: 4,
+                    )
+                  ],
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xFF780206),
+                      Color(0xFF061161),
+                    ],
+                  ),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20.0),
+                  child: Row(
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'AirQuality',
+                            style: GoogleFonts.openSans(
+                                color: Colors.white70,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            'UNSAFE',
+                            style: GoogleFonts.openSans(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
                         ],
+                      ),
+                      SizedBox(
+                        width: 27,
+                      ),
+                      SizedBox(
+                        height: 25,
+                        width: 30,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              'https://icon-library.com/images/temp-icon/temp-icon-26.jpg',
+                          color: Colors.white70,
+                        ),
+                      ),
+                      Text(
+                        '29°',
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      SizedBox(
+                        height: 25,
+                        width: 30,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              'https://lh3.googleusercontent.com/proxy/gKOfQJC-TlCglPMDFyQP6bwVK-O_yJDOYV7rI8GK6U8tlPvdMBnrUm_EL0ZBKVWsB-hewqPks9MwVMYmrbUN6uyRiFXNcIh3E1utf0KfKYgt_aoqcW8hWJ2IIc0iPmy70XCtOaLceu13SD_rX7g',
+                          color: Colors.white70,
+                        ),
+                      ),
+                      Text(
+                        '90',
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      SizedBox(
+                        height: 25,
+                        width: 30,
+                        child: CachedNetworkImage(
+                          imageUrl:
+                              'https://www.pngrepo.com/download/140232/wind.png',
+                          color: Colors.white70,
+                        ),
+                      ),
+                      Text(
+                        '4.1 Kmph',
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.only(left: 30.0, right: 30, bottom: 10),
-                child: Container(
-                  height: 100,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      gradient: LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                        colors: [
-                          Color(0xFF780206),
-                          Color(0xFF061161),
-                        ],
-                      )),
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
-                    child: Row(
-                      children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Container(
+              child: GridView(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8.0, bottom: 8, left: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'AirQuality',
-                              style: GoogleFonts.openSans(
-                                  color: Colors.white70,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 24),
+                              "Carbon Monoxide",
+                              style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black45),
                             ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              'UNSAFE',
-                              style: GoogleFonts.openSans(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 18,
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "3.30",
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: " μg/m\u00B3",
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ],
                               ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Average",
+                                  style: GoogleFonts.ubuntu(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                SizedBox(
+                                    width: 30,
+                                    height: 30,
+                                    child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif"))
+                              ],
                             ),
                           ],
                         ),
-                        SizedBox(
-                          width: 22,
-                        ),
-                        SizedBox(
-                          height: 25,
-                          width: 30,
-                          child: CachedNetworkImage(
-                            imageUrl:
-                                'https://icon-library.com/images/temp-icon/temp-icon-26.jpg',
-                            color: Colors.white70,
-                          ),
-                        ),
-                        Text(
-                          '29°',
-                          style: GoogleFonts.openSans(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 25,
-                          width: 30,
-                          child: CachedNetworkImage(
-                            imageUrl:
-                            'https://lh3.googleusercontent.com/proxy/gKOfQJC-TlCglPMDFyQP6bwVK-O_yJDOYV7rI8GK6U8tlPvdMBnrUm_EL0ZBKVWsB-hewqPks9MwVMYmrbUN6uyRiFXNcIh3E1utf0KfKYgt_aoqcW8hWJ2IIc0iPmy70XCtOaLceu13SD_rX7g',
-                            color: Colors.white70,
-                          ),
-                        ),Text(
-                          '90',
-                          style: GoogleFonts.openSans(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 20,
-                        ),
-                        SizedBox(
-                          height: 25,
-                          width: 30,
-                          child: CachedNetworkImage(
-                            imageUrl:
-                            'https://www.pngrepo.com/download/140232/wind.png',
-                            color: Colors.white70,
-                          ),
-                        ),
-                        Text(
-                          '4.1 Kmph',
-                          style: GoogleFonts.openSans(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
-                ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8.0, bottom: 8, left: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Water Droplets",
+                              style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black45),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "20",
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: " μg/m\u00B3",
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Rain",
+                                  style: GoogleFonts.ubuntu(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                SizedBox(
+                                    width: 30,
+                                    height: 30,
+                                    child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://i.ya-webdesign.com/images/transparent-raindrop-animated-2.gif"))
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-//              Container(
-//                height: 270,
-//                child: Swiper(
-//                  itemCount: 10,
-//                  itemWidth: MediaQuery.of(context).size.width - 2 *30,
-//                  layout: SwiperLayout.STACK,
-//                  itemBuilder: (context, index) {
-//                    return Stack(
-//                      children: [
-//                        Card(
-//                          elevation: 5,
-//                          shape: RoundedRectangleBorder(
-//                            borderRadius: BorderRadius.circular(50)
-//                          ),
-//                          color: Colors.white,
-//                          child: Padding(
-//                            padding: const EdgeInsets.all(32.0),
-//                            child: Column(
-//                              mainAxisAlignment: MainAxisAlignment.center,
-//                              crossAxisAlignment: CrossAxisAlignment.start,
-//                              children: [
-//                                SizedBox(
-//                                  width: MediaQuery.of(context).size.width,
-//                                ),
-//                                Text(
-//                                  "33 μg/m\u00B3",
-//                                  style: GoogleFonts.ubuntu(
-//                                      fontSize: 44, fontWeight: FontWeight.bold),
-//                                ),
-//                                Text(
-//                                  "33 μg/m\u00B3",
-//                                  style: GoogleFonts.ubuntu(
-//                                      fontSize: 44, fontWeight: FontWeight.bold),
-//                                ),
-//                              ],
-//                            ),
-//                          ),
-//                        ),
-//                      ],
-//                    );
-//                  },
-//                ),
-//              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
