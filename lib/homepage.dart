@@ -445,7 +445,147 @@ class _MyHomePageState extends State<MyHomePage>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Water Droplets",
+                              "Nitrogen Dioxide",
+                              style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black45),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "8",
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: " μg/m\u00B3",
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Moderate",
+                                  style: GoogleFonts.ubuntu(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                SizedBox(
+                                    width: 30,
+                                    height: 30,
+                                    child: CachedNetworkImage(
+                                        imageUrl:
+                                            "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif"))
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8.0, bottom: 8, left: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Ozone",
+                              style: GoogleFonts.ubuntu(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w700,
+                                  color: Colors.black45),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                children: [
+                                  TextSpan(
+                                    text: "3.30",
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 45,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.black),
+                                  ),
+                                  TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: " μg/m\u00B3",
+                                        style: GoogleFonts.ubuntu(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                            color: Colors.black),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  "Unhealthy",
+                                  style: GoogleFonts.ubuntu(
+                                      fontSize: 19,
+                                      fontWeight: FontWeight.w600,
+                                      color: Colors.black),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                SizedBox(
+                                    width: 30,
+                                    height: 30,
+                                    child: CachedNetworkImage(
+                                        imageUrl:
+                                        "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif"))
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 8.0, bottom: 8, left: 20),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "PM \u2081\u2080",
                               style: GoogleFonts.ubuntu(
                                   fontSize: 20,
                                   fontWeight: FontWeight.w700,
@@ -478,7 +618,7 @@ class _MyHomePageState extends State<MyHomePage>
                             Row(
                               children: [
                                 Text(
-                                  "Rain",
+                                  "Healthy",
                                   style: GoogleFonts.ubuntu(
                                       fontSize: 19,
                                       fontWeight: FontWeight.w600,
@@ -492,7 +632,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     height: 30,
                                     child: CachedNetworkImage(
                                         imageUrl:
-                                            "https://i.ya-webdesign.com/images/transparent-raindrop-animated-2.gif"))
+                                        "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
                               ],
                             ),
                           ],
