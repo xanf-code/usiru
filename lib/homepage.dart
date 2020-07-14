@@ -200,20 +200,26 @@ class _MyHomePageState extends State<MyHomePage>
                                   SizedBox(
                                     height: 10.0,
                                   ),
-                                  Text(
-                                    '135',
-                                    style: GoogleFonts.ubuntu(
-                                        fontSize: 40.0,
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.bold),
+                                  DelayedDisplay(
+                                    slidingBeginOffset: Offset(0.5,0),
+                                    child: Text(
+                                      '135',
+                                      style: GoogleFonts.ubuntu(
+                                          fontSize: 40.0,
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                   SizedBox(
                                     height: 3.0,
                                   ),
-                                  Text(
-                                    'PM\u00B2\u2075',
-                                    style: GoogleFonts.ubuntu(
-                                        fontSize: 20.0, color: Colors.white),
+                                  DelayedDisplay(
+                                    slidingBeginOffset: Offset(-0.5,0),
+                                    child: Text(
+                                      'PM\u00B2\u2075',
+                                      style: GoogleFonts.ubuntu(
+                                          fontSize: 20.0, color: Colors.white),
+                                    ),
                                   ),
                                 ],
                               ),
