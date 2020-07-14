@@ -32,6 +32,9 @@ dependencies:
   google_fonts: ^1.1.0
   flare_flutter: ^2.0.5
   percent_indicator: ^2.1.5
+  supercharged: ^1.6.0
+  show_up_animation: ^1.0.2
+  delayed_display: ^1.0.3
 
 dev_dependencies:
   flutter_test:
