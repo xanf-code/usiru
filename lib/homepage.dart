@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
+import 'package:percent_indicator/percent_indicator.dart';
 import 'package:usiru/Custom/clipper.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -410,16 +411,21 @@ class _MyHomePageState extends State<MyHomePage>
                             Row(
                               children: [
                                 CircularPercentIndicator(
+                                  //backgroundWidth: 0,
                                   animation: true,
                                   arcType: ArcType.HALF,
+                                  //startAngle: 275.0,
                                   radius: 100.0,
                                   lineWidth: 12.0,
-                                  percent: 0.47,
+                                  percent: 0.9,
                                   animationDuration: 1500,
+                                  backgroundColor: Colors.white,
+                                  circularStrokeCap: CircularStrokeCap.round,
                                   center: new Text(
                                     "2nm",
                                     style: GoogleFonts.ubuntu(
-                                        fontSize: 20, fontWeight: FontWeight.bold),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   linearGradient: LinearGradient(
                                     colors: [
@@ -428,13 +434,12 @@ class _MyHomePageState extends State<MyHomePage>
                                       Colors.purpleAccent
                                     ],
                                   ),
-                                  backgroundColor: Colors.white,
-                                  circularStrokeCap: CircularStrokeCap.round,
                                 ),
                                 Padding(
                                   padding: const EdgeInsets.only(left: 15.0),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Row(
                                         children: [
@@ -446,11 +451,20 @@ class _MyHomePageState extends State<MyHomePage>
                                               shape: BoxShape.circle,
                                             ),
                                           ),
-                                          SizedBox(width: 10,),
-                                          Text('Low', style: GoogleFonts.ubuntu(fontSize: 17,fontWeight: FontWeight.bold),),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            'Low',
+                                            style: GoogleFonts.ubuntu(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ],
                                       ),
-                                      SizedBox(height: 10,),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
                                       Row(
                                         children: [
                                           Container(
@@ -461,11 +475,20 @@ class _MyHomePageState extends State<MyHomePage>
                                               shape: BoxShape.circle,
                                             ),
                                           ),
-                                          SizedBox(width: 10,),
-                                          Text('Mid', style: GoogleFonts.ubuntu(fontSize: 17,fontWeight: FontWeight.bold),),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            'Mid',
+                                            style: GoogleFonts.ubuntu(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ],
                                       ),
-                                      SizedBox(height: 10,),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
                                       Row(
                                         children: [
                                           Container(
@@ -476,8 +499,15 @@ class _MyHomePageState extends State<MyHomePage>
                                               shape: BoxShape.circle,
                                             ),
                                           ),
-                                          SizedBox(width: 10,),
-                                          Text('High', style: GoogleFonts.ubuntu(fontSize: 17,fontWeight: FontWeight.bold),),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text(
+                                            'High',
+                                            style: GoogleFonts.ubuntu(
+                                                fontSize: 17,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                         ],
                                       ),
                                     ],
