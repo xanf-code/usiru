@@ -2,12 +2,14 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_map/plugin_api.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
+import 'package:latlong/latlong.dart';
 
 class MyHomePage extends StatefulWidget {
   final double goalCompleted = 0.9;
@@ -191,9 +193,9 @@ class _MyHomePageState extends State<MyHomePage>
                               Column(
                                 children: <Widget>[
                                   CachedNetworkImage(
-                                    color: Colors.white.withOpacity(0.3),
+                                    color: Colors.white.withOpacity(0.5),
                                     imageUrl:
-                                        "https://cdn.onlinewebfonts.com/svg/img_378105.png",
+                                        "https://images.vexels.com/media/users/3/205468/isolated/preview/6495a5cc336d47f345c90e5b41e2b4c8-pitta-mask-illustration-by-vexels.png",
                                     height: 40,
                                     width: 40,
                                   ),
@@ -201,7 +203,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     height: 10.0,
                                   ),
                                   DelayedDisplay(
-                                    slidingBeginOffset: Offset(0.5,0),
+                                    slidingBeginOffset: Offset(0.5, 0),
                                     child: Text(
                                       '135',
                                       style: GoogleFonts.ubuntu(
@@ -214,7 +216,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     height: 3.0,
                                   ),
                                   DelayedDisplay(
-                                    slidingBeginOffset: Offset(-0.5,0),
+                                    slidingBeginOffset: Offset(-0.5, 0),
                                     child: Text(
                                       'PM\u00B2\u2075',
                                       style: GoogleFonts.ubuntu(
@@ -293,7 +295,7 @@ class _MyHomePageState extends State<MyHomePage>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             DelayedDisplay(
-                              slidingBeginOffset: Offset(-0.5,1),
+                              slidingBeginOffset: Offset(-0.5, 1),
                               child: Text(
                                 'AirQuality',
                                 style: GoogleFonts.openSans(
@@ -306,7 +308,7 @@ class _MyHomePageState extends State<MyHomePage>
                               height: 8,
                             ),
                             DelayedDisplay(
-                              slidingBeginOffset: Offset(-0.5,1),
+                              slidingBeginOffset: Offset(-0.5, 1),
                               child: Text(
                                 'UNSAFE',
                                 style: GoogleFonts.openSans(
@@ -398,7 +400,7 @@ class _MyHomePageState extends State<MyHomePage>
             ),
             Container(
               child: Padding(
-                padding: const EdgeInsets.only(left: 28.0, right: 20),
+                padding: const EdgeInsets.only(left: 28.0, right: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -496,7 +498,7 @@ class _MyHomePageState extends State<MyHomePage>
                                     padding: const EdgeInsets.only(left: 15.0),
                                     child: Column(
                                       crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Row(
                                           children: [
@@ -641,7 +643,7 @@ class _MyHomePageState extends State<MyHomePage>
                                       height: 30,
                                       child: CachedNetworkImage(
                                           imageUrl:
-                                          "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif"))
+                                              "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif"))
                                 ],
                               ),
                               LinearPercentIndicator(
@@ -727,7 +729,7 @@ class _MyHomePageState extends State<MyHomePage>
                                       height: 30,
                                       child: CachedNetworkImage(
                                           imageUrl:
-                                          "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif"))
+                                              "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif"))
                                 ],
                               ),
                               LinearPercentIndicator(
@@ -813,7 +815,7 @@ class _MyHomePageState extends State<MyHomePage>
                                       height: 30,
                                       child: CachedNetworkImage(
                                           imageUrl:
-                                          "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif"))
+                                              "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif"))
                                 ],
                               ),
                               LinearPercentIndicator(
@@ -899,7 +901,7 @@ class _MyHomePageState extends State<MyHomePage>
                                       height: 30,
                                       child: CachedNetworkImage(
                                           imageUrl:
-                                          "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
+                                              "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
                                 ],
                               ),
                               LinearPercentIndicator(
@@ -921,7 +923,7 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                       ),
                     ),
-                    Padding (
+                    Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: Container(
                         height: 180,
@@ -985,7 +987,7 @@ class _MyHomePageState extends State<MyHomePage>
                                       height: 30,
                                       child: CachedNetworkImage(
                                           imageUrl:
-                                          "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
+                                              "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif"))
                                 ],
                               ),
                               LinearPercentIndicator(
@@ -1007,6 +1009,30 @@ class _MyHomePageState extends State<MyHomePage>
                         ),
                       ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20,bottom: 20),
+              child: Container(
+                height: 300,
+                child: FlutterMap(
+                  options: new MapOptions(
+                    center: LatLng(12.9716, 77.5946),
+                    zoom: 11.0,
+                  ),
+                  layers: [
+                    TileLayerOptions(
+                        opacity: 1,
+                        urlTemplate:
+                        "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=7190713792495b31e2f95f0d3c6b2688",
+                        subdomains: ['a', 'b', 'c']),
+                    TileLayerOptions(
+                      opacity: 0.5,
+                        urlTemplate:
+                            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        subdomains: ['a', 'b', 'c']),
                   ],
                 ),
               ),
