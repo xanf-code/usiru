@@ -1,53 +1,27 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_map/plugin_api.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:show_up_animation/show_up_animation.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:usiru/Custom/clipper.dart';
-import 'package:latlong/latlong.dart';
+import 'package:usiru/Reusables/EndTileCard.dart';
 import 'Constants/constant.dart';
 import 'Reusables/Pollutant_card.dart';
 import 'Reusables/QualityCard.dart';
 import 'Reusables/TopClipperCard.dart';
 import 'Reusables/UVCard.dart';
+import 'Reusables/Maps.dart';
 
 class MyHomePage extends StatefulWidget {
-  final double goalCompleted = 0.9;
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
-  AnimationController _radialProgressAnimationController;
-  Animation<double> _progressAnimation;
-  final Duration fadeInDuration = Duration(milliseconds: 500);
-  final Duration fillDuration = Duration(seconds: 2);
-  double progressDegrees = 0;
-  var count = 0;
+class _MyHomePageState extends State<MyHomePage>{
 
   @override
   void initState() {
     super.initState();
-    _radialProgressAnimationController =
-        AnimationController(vsync: this, duration: fillDuration);
-    _progressAnimation = Tween(begin: 0.0, end: 360.0).animate(CurvedAnimation(
-        parent: _radialProgressAnimationController, curve: Curves.easeIn))
-      ..addListener(() {
-        setState(() {
-          progressDegrees = widget.goalCompleted * _progressAnimation.value;
-        });
-      });
-
-    _radialProgressAnimationController.forward();
-  }
-
-  @override
-  void dispose() {
-    _radialProgressAnimationController.dispose();
-    super.dispose();
   }
 
   @override
@@ -262,35 +236,9 @@ class _MyHomePageState extends State<MyHomePage>
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20, bottom: 20),
-                child: ShowUpAnimation(
-                  direction: Direction.vertical,
-                  animationDuration: Duration(milliseconds: 1000),
-                  offset: 0.2,
-                  child: Container(
-                    height: 300,
-                    child: FlutterMap(
-                      options: new MapOptions(
-                        interactive: true,
-                        center: LatLng(12.9716, 77.5946),
-                        zoom: 11.0,
-                      ),
-                      layers: [
-                        TileLayerOptions(
-                            opacity: 1,
-                            urlTemplate:
-                                "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=7190713792495b31e2f95f0d3c6b2688",
-                            subdomains: ['a', 'b', 'c']),
-                        TileLayerOptions(
-                            opacity: 0.5,
-                            urlTemplate:
-                                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                            subdomains: ['a', 'b', 'c']),
-                      ],
-                    ),
-                  ),
-                ),
+              Map(
+                Urlone: "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=7190713792495b31e2f95f0d3c6b2688",
+                Urltwo: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
               ),
               Center(
                 child: Text(
@@ -299,25 +247,9 @@ class _MyHomePageState extends State<MyHomePage>
                       fontSize: 16, fontWeight: FontWeight.bold),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 10),
-                child: ListTile(
-                  onTap: () => launch('https://cpcb.nic.in/'),
-                  title: Text(
-                    'Central Pollution Control Board',
-                    style: GoogleFonts.openSans(
-                        fontSize: 14, fontWeight: FontWeight.bold),
-                  ),
-                  subtitle: Text(
-                    'https://cpcb.nic.in/',
-                    style: GoogleFonts.openSans(
-                        fontSize: 13, fontWeight: FontWeight.normal),
-                  ),
-                  trailing: Icon(
-                    Icons.arrow_forward_ios,
-                    size: 14,
-                  ),
-                ),
+              EndTile(
+                title: 'Central Pollution Control Board',
+                subtitle: 'https://cpcb.nic.in/',
               ),
             ],
           ),
