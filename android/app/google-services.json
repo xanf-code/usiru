@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "38821525963",
+    "firebase_url": "https://usiru-28f73.firebaseio.com",
+    "project_id": "usiru-28f73",
+    "storage_bucket": "usiru-28f73.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38821525963:android:062c08a00d75ea36029e4e",
+        "android_client_info": {
+          "package_name": "com.namma.usiru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "38821525963-4nfk6qvgmiqtprtv1mrbcku52nmr6hqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOBY7zbUpyO6qEXSM5N5E3oqV2vdovjGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "38821525963-4nfk6qvgmiqtprtv1mrbcku52nmr6hqu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

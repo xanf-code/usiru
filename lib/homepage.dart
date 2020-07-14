@@ -1,8 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:delayed_display/delayed_display.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_map/plugin_api.dart';
+import 'package:focused_menu/focused_menu.dart';
+import 'package:focused_menu/modals.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
@@ -11,6 +14,8 @@ import 'package:show_up_animation/show_up_animation.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:usiru/Custom/clipper.dart';
 import 'package:latlong/latlong.dart';
+
+import 'Constants/constant.dart';
 
 class MyHomePage extends StatefulWidget {
   final double goalCompleted = 0.9;
@@ -440,142 +445,568 @@ class _MyHomePageState extends State<MyHomePage>
                 child: Row(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Container(
-                        height: 180,
-                        width: 230,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              top: 8.0, bottom: 8, left: 20),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Text(
-                                "UV Index",
-                                style: GoogleFonts.ubuntu(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w700,
-                                    color: Colors.black38),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Row(
-                                children: [
-                                  CircularPercentIndicator(
-                                    //backgroundWidth: 0,
-                                    animation: true,
-                                    arcType: ArcType.HALF,
-                                    //startAngle: 275.0,
-                                    radius: 100.0,
-                                    lineWidth: 12.0,
-                                    percent: 0.78,
-                                    animationDuration: 1500,
-                                    backgroundColor: Colors.white,
-                                    circularStrokeCap: CircularStrokeCap.round,
-                                    center: new Text(
-                                      "7 nm",
-                                      style: GoogleFonts.ubuntu(
-                                          fontSize: 20,
+                      padding: const EdgeInsets.only(left: 20.0),
+                      child: FocusedMenuHolder(
+                        animateMenuItems: true,
+                        menuItems: <FocusedMenuItem>[
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('12/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    linearGradient: LinearGradient(
-                                      colors: [
-                                        Colors.black,
-                                        Colors.red,
-                                        Colors.purpleAccent
-                                      ],
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(left: 15.0),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 15,
-                                              height: 15,
-                                              decoration: new BoxDecoration(
-                                                color: Colors.black,
-                                                shape: BoxShape.circle,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text(
-                                              'Low',
-                                              style: GoogleFonts.ubuntu(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 15,
-                                              height: 15,
-                                              decoration: new BoxDecoration(
-                                                color: Colors.red,
-                                                shape: BoxShape.circle,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text(
-                                              'Mid',
-                                              style: GoogleFonts.ubuntu(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: 10,
-                                        ),
-                                        Row(
-                                          children: [
-                                            Container(
-                                              width: 15,
-                                              height: 15,
-                                              decoration: new BoxDecoration(
-                                                color: Colors.purpleAccent,
-                                                shape: BoxShape.circle,
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text(
-                                              'High',
-                                              style: GoogleFonts.ubuntu(
-                                                  fontSize: 17,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
                                     ),
                                   ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('13/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('14/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('15/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('16/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('17/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          FocusedMenuItem(
+                            title: Row(
+                              children: [
+                                SizedBox(width: 25,),
+                                Text('18/07',style: GoogleFonts.openSans(fontSize: 20,fontWeight: FontWeight.bold),),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.green,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '2',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.blueAccent,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '8',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                                SizedBox(width: 30,),
+                                Container(
+                                  height: 35,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                      color: Colors.red,
+                                      borderRadius: BorderRadius.circular(5)),
+                                  child: Center(
+                                    child: Text(
+                                      '0',
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Container(
+                            height: 180,
+                            width: 230,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  top: 8.0, bottom: 8, left: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "UV Index",
+                                    style: GoogleFonts.ubuntu(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        color: Colors.black38),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    children: [
+                                      CircularPercentIndicator(
+                                        //backgroundWidth: 0,
+                                        animation: true,
+                                        arcType: ArcType.HALF,
+                                        //startAngle: 275.0,
+                                        radius: 100.0,
+                                        lineWidth: 12.0,
+                                        percent: 0.78,
+                                        animationDuration: 1500,
+                                        backgroundColor: Colors.white,
+                                        circularStrokeCap:
+                                            CircularStrokeCap.round,
+                                        center: new Text(
+                                          "7 nm",
+                                          style: GoogleFonts.ubuntu(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.bold),
+                                        ),
+                                        linearGradient: LinearGradient(
+                                          colors: [
+                                            Colors.black,
+                                            Colors.red,
+                                            Colors.purpleAccent
+                                          ],
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(left: 15.0),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  width: 15,
+                                                  height: 15,
+                                                  decoration: new BoxDecoration(
+                                                    color: Colors.black,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(
+                                                  'Low',
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  width: 15,
+                                                  height: 15,
+                                                  decoration: new BoxDecoration(
+                                                    color: Colors.red,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(
+                                                  'Mid',
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  width: 15,
+                                                  height: 15,
+                                                  decoration: new BoxDecoration(
+                                                    color: Colors.purpleAccent,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  width: 10,
+                                                ),
+                                                Text(
+                                                  'High',
+                                                  style: GoogleFonts.ubuntu(
+                                                      fontSize: 17,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              )
-                            ],
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -1014,6 +1445,103 @@ class _MyHomePageState extends State<MyHomePage>
                 ),
               ),
             ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 28.0, right: 25, top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      animationDuration: Duration(milliseconds: 1000),
+                      offset: -0.5,
+                      child: Text(
+                        "7-Day Forcast",
+                        style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black87),
+                      ),
+                    ),
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      animationDuration: Duration(milliseconds: 1000),
+                      offset: 0.5,
+                      child: Icon(
+                        Icons.info_outline,
+                        color: Colors.black38,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 32, top: 30),
+              child: ShowUpAnimation(
+                child: Container(
+                  height: 220,
+                  child: LineChart(
+                    LineChartData(
+                      gridData: FlGridData(show: true),
+                      borderData: FlBorderData(show: true),
+                      titlesData: FlTitlesData(show: true),
+                      lineBarsData: [
+                        LineChartBarData(
+                          spots: [
+                            FlSpot(1, 23),
+                            FlSpot(2, 22),
+                            FlSpot(3, 21),
+                            FlSpot(4, 22),
+                            FlSpot(5, 19),
+                            FlSpot(6, 21),
+                          ],
+                          isCurved: true,
+                          dotData: FlDotData(
+                            show: true,
+                          ),
+                          belowBarData: BarAreaData(show: false),
+                          colors: [kPrimaryColor],
+                          barWidth: 6,
+                        ),
+                      ],
+                    ),
+                    swapAnimationDuration: Duration(milliseconds: 1100),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              child: Padding(
+                padding: const EdgeInsets.only(left: 28.0, right: 25, top: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      animationDuration: Duration(milliseconds: 1000),
+                      offset: -0.5,
+                      child: Text(
+                        "Air-Index Map",
+                        style: GoogleFonts.ubuntu(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700,
+                            color: Colors.black87),
+                      ),
+                    ),
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      animationDuration: Duration(milliseconds: 1000),
+                      offset: 0.5,
+                      child: Icon(
+                        Icons.info_outline,
+                        color: Colors.black38,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(top: 20, bottom: 20),
               child: ShowUpAnimation(
@@ -1052,9 +1580,9 @@ class _MyHomePageState extends State<MyHomePage>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 8.0,right: 8,bottom: 10),
+              padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 10),
               child: ListTile(
-                onTap: ()=> launch('https://cpcb.nic.in/'),
+                onTap: () => launch('https://cpcb.nic.in/'),
                 title: Text(
                   'Central Pollution Control Board',
                   style: GoogleFonts.openSans(
@@ -1065,7 +1593,10 @@ class _MyHomePageState extends State<MyHomePage>
                   style: GoogleFonts.openSans(
                       fontSize: 13, fontWeight: FontWeight.normal),
                 ),
-                trailing: Icon(Icons.arrow_forward_ios,size: 14,),
+                trailing: Icon(
+                  Icons.arrow_forward_ios,
+                  size: 14,
+                ),
               ),
             ),
           ],
