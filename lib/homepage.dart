@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:vector_math/vector_math_64.dart' as math;
+import 'package:usiru/Custom/clipper.dart';
 
 class MyHomePage extends StatefulWidget {
   final double goalCompleted = 0.9;
@@ -796,59 +796,3 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 }
-
-class MyClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    var path = Path();
-    path.lineTo(0, size.height - 80);
-    path.quadraticBezierTo(
-        size.width / 2, size.height, size.width, size.height - 80);
-    path.lineTo(size.width, 0);
-    path.close();
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
-  }
-}
-
-//class RadialPainter extends CustomPainter {
-//  double progressInDegrees;
-//
-//  RadialPainter(this.progressInDegrees);
-//
-//  @override
-//  void paint(Canvas canvas, Size size) {
-//    Paint paint = Paint()
-//      ..color = Colors.black12
-//      ..strokeCap = StrokeCap.round
-//      ..style = PaintingStyle.stroke
-//      ..strokeWidth = 8.0;
-//
-//    Offset center = Offset(size.width / 2, size.height / 2);
-//    canvas.drawCircle(center, size.width / 2, paint);
-//
-//    Paint progressPaint = Paint()
-//      ..shader = LinearGradient(
-//              colors: [Colors.white, Colors.red, Colors.yellow])
-//          .createShader(Rect.fromCircle(center: center, radius: size.width / 2))
-//      ..strokeCap = StrokeCap.round
-//      ..style = PaintingStyle.stroke
-//      ..strokeWidth = 8.0;
-//
-//    canvas.drawArc(
-//        Rect.fromCircle(center: center, radius: size.width / 2),
-//        math.radians(-90),
-//        math.radians(progressInDegrees),
-//        false,
-//        progressPaint);
-//  }
-//
-//  @override
-//  bool shouldRepaint(CustomPainter oldDelegate) {
-//    return true;
-//  }
-//}
