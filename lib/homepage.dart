@@ -8,6 +8,7 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:show_up_animation/show_up_animation.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:usiru/Custom/clipper.dart';
 import 'package:latlong/latlong.dart';
 
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage>
     return SafeArea(
       child: Scaffold(
         body: ListView(
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           children: [
             ClipPath(
               clipper: MyClipper(),
@@ -476,12 +477,12 @@ class _MyHomePageState extends State<MyHomePage>
                                     //startAngle: 275.0,
                                     radius: 100.0,
                                     lineWidth: 12.0,
-                                    percent: 0.57,
+                                    percent: 0.78,
                                     animationDuration: 1500,
                                     backgroundColor: Colors.white,
                                     circularStrokeCap: CircularStrokeCap.round,
                                     center: new Text(
-                                      "2nm",
+                                      "7 nm",
                                       style: GoogleFonts.ubuntu(
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
@@ -1014,27 +1015,57 @@ class _MyHomePageState extends State<MyHomePage>
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 20,bottom: 20),
-              child: Container(
-                height: 300,
-                child: FlutterMap(
-                  options: new MapOptions(
-                    center: LatLng(12.9716, 77.5946),
-                    zoom: 11.0,
+              padding: const EdgeInsets.only(top: 20, bottom: 20),
+              child: ShowUpAnimation(
+                direction: Direction.vertical,
+                animationDuration: Duration(milliseconds: 1000),
+                offset: 0.2,
+                child: Container(
+                  height: 300,
+                  child: FlutterMap(
+                    options: new MapOptions(
+                      interactive: true,
+                      center: LatLng(12.9716, 77.5946),
+                      zoom: 11.0,
+                    ),
+                    layers: [
+                      TileLayerOptions(
+                          opacity: 1,
+                          urlTemplate:
+                              "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=7190713792495b31e2f95f0d3c6b2688",
+                          subdomains: ['a', 'b', 'c']),
+                      TileLayerOptions(
+                          opacity: 0.5,
+                          urlTemplate:
+                              "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                          subdomains: ['a', 'b', 'c']),
+                    ],
                   ),
-                  layers: [
-                    TileLayerOptions(
-                        opacity: 1,
-                        urlTemplate:
-                        "https://tiles.waqi.info/tiles/usepa-aqi/{z}/{x}/{y}.png?token=7190713792495b31e2f95f0d3c6b2688",
-                        subdomains: ['a', 'b', 'c']),
-                    TileLayerOptions(
-                      opacity: 0.5,
-                        urlTemplate:
-                            "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-                        subdomains: ['a', 'b', 'c']),
-                  ],
                 ),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Data Sources',
+                style: GoogleFonts.openSans(
+                    fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0,right: 8,bottom: 10),
+              child: ListTile(
+                onTap: ()=> launch('https://cpcb.nic.in/'),
+                title: Text(
+                  'Central Pollution Control Board',
+                  style: GoogleFonts.openSans(
+                      fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  'https://cpcb.nic.in/',
+                  style: GoogleFonts.openSans(
+                      fontSize: 13, fontWeight: FontWeight.normal),
+                ),
+                trailing: Icon(Icons.arrow_forward_ios,size: 14,),
               ),
             ),
           ],
