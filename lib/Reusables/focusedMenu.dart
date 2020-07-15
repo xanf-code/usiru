@@ -78,15 +78,15 @@ class FocusedMenu extends StatelessWidget {
                 children: [
                   Text('Date'),
                   SizedBox(
-                    width: 48,
+                    width: 53,
                   ),
                   Text('Min'),
                   SizedBox(
-                    width: 67,
+                    width: 63,
                   ),
                   Text('Max'),
                   SizedBox(
-                    width: 67,
+                    width: 63,
                   ),
                   Text('Avg'),
                 ],

@@ -25,17 +25,17 @@ class Graph extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 500,
-      height: 200,
+      height: 250,
       child: BarChart(
         BarChartData(
           alignment: BarChartAlignment.spaceAround,
-          maxY: 56,
+          maxY: 120,
           barTouchData: BarTouchData(
             enabled: true,
             touchTooltipData: BarTouchTooltipData(
               getTooltipItem: (group, groupIndex, rod, rodIndex) {
                 return BarTooltipItem(
-                  rod.y.toString() + "°",
+                  rod.y.toString().replaceAll('.0',''),
                   GoogleFonts.ubuntu(
                       color: Colors.grey, fontWeight: FontWeight.bold),
                 );

@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
+          physics: ClampingScrollPhysics(),
           child: Column(
             children: [
               ClipPath(
@@ -363,17 +363,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 12.0, right: 12.0),
+                padding: const EdgeInsets.only(left: 12.0, right: 12.0,top: 10),
                 child: ShowUpAnimation(
                   direction: Direction.vertical,
                   child: Graph(
-                    y1: 27.2,
-                    y2: 24,
-                    y3: 19.6,
-                    y4: 24,
-                    y5: 21,
-                    y6: 25.6,
-                    y7: 19.6,
+                    y1: 68,
+                    y2: 67,
+                    y3: 73,
+                    y4: 67,
+                    y5: 79,
+                    y6: 67,
+                    y7: 68,
                   ),
                 ),
               ),
