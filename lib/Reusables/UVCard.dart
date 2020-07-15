@@ -84,6 +84,12 @@ class UVCard extends StatelessWidget {
                               decoration: new BoxDecoration(
                                 color: Colors.black,
                                 shape: BoxShape.circle,
+                                boxShadow: [
+                                  new BoxShadow(
+                                    color: Colors.black54,
+                                    blurRadius: 3.0,
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(
@@ -109,6 +115,12 @@ class UVCard extends StatelessWidget {
                               decoration: new BoxDecoration(
                                 color: Colors.red,
                                 shape: BoxShape.circle,
+                                boxShadow: [
+                                  new BoxShadow(
+                                    color: Colors.black54,
+                                    blurRadius: 3.0,
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(
@@ -134,6 +146,12 @@ class UVCard extends StatelessWidget {
                               decoration: new BoxDecoration(
                                 color: Colors.purpleAccent,
                                 shape: BoxShape.circle,
+                                boxShadow: [
+                                  new BoxShadow(
+                                    color: Colors.black54,
+                                    blurRadius: 3.0,
+                                  ),
+                                ],
                               ),
                             ),
                             SizedBox(

@@ -64,9 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         offset: -0.5,
                         child: Text(
                           "Pollutants",
-                          style: GoogleFonts.ubuntu(
+                          style: GoogleFonts.openSans(
                               fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: Colors.black87),
                         ),
                       ),
@@ -154,9 +154,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         offset: -0.5,
                         child: Text(
                           "7-Day Forcast",
-                          style: GoogleFonts.ubuntu(
+                          style: GoogleFonts.openSans(
                               fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: Colors.black87),
                         ),
                       ),
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   direction: Direction.vertical,
                   child: Graph(
                     y1: 27.2,
-                    y2: 23,
+                    y2: 24,
                     y3: 19.6,
                     y4: 24,
                     y5: 21,
@@ -201,9 +201,9 @@ class _MyHomePageState extends State<MyHomePage> {
                         offset: -0.5,
                         child: Text(
                           "Air-Index Map",
-                          style: GoogleFonts.ubuntu(
+                          style: GoogleFonts.openSans(
                               fontSize: 20,
-                              fontWeight: FontWeight.w700,
+                              fontWeight: FontWeight.w600,
                               color: Colors.black87),
                         ),
                       ),
@@ -229,7 +229,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text(
                   'Data Sources',
                   style: GoogleFonts.openSans(
-                      fontSize: 16, fontWeight: FontWeight.bold),
+                      fontSize: 16, fontWeight: FontWeight.w600),
                 ),
               ),
               EndTile(
