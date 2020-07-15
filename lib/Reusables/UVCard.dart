@@ -71,7 +71,7 @@ class UVCard extends StatelessWidget {
                   ),
                   Padding(
                     padding:
-                    const EdgeInsets.only(left: 15.0),
+                    const EdgeInsets.only(left: 22.0),
                     child: Column(
                       crossAxisAlignment:
                       CrossAxisAlignment.start,
