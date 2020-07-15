@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:focused_menu/focused_menu.dart';
-import 'package:focused_menu/modals.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
@@ -377,6 +375,24 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
+              Container(
+                height: 200,
+                child: PageView(
+                  children: [
+                    Container(child: Center(child: Text('1'),),),
+                    Container(child: Center(child: Text('2'),),),
+                    Container(child: Center(child: Text('3'),),),
+                    Container(child: Center(child: Text('4'),),),
+                    Container(child: Center(child: Text('5'),),),
+                    Container(child: Center(child: Text('6'),),),
+                    Container(child: Center(child: Text('7'),),),
+                    Container(child: Center(child: Text('8'),),),
+                    Container(child: Center(child: Text('9'),),),
+                    Container(child: Center(child: Text('10'),),),
+                  ],
+                ),
+              ),//InitialDemo
               Container(
                 child: Padding(
                   padding:

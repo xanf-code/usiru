@@ -76,19 +76,19 @@ class FocusedMenu extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text('Date'),
+                  Text('Date',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold),),
                   SizedBox(
-                    width: 53,
+                    width: 51,
                   ),
-                  Text('Min'),
+                  Text('Min',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
                   SizedBox(
-                    width: 63,
+                    width: 61,
                   ),
-                  Text('Max'),
+                  Text('Max',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
                   SizedBox(
-                    width: 63,
+                    width: 61,
                   ),
-                  Text('Avg'),
+                  Text('Avg',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
                 ],
               ),
             ],
