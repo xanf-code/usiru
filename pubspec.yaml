@@ -38,6 +38,8 @@ dependencies:
   flutter_map:
   url_launcher: ^5.5.0
   fl_chart: ^0.10.1
+  modal_bottom_sheet: ^0.2.0+1
+  focused_menu: ^1.0.1
 
 dev_dependencies:
   flutter_test:
