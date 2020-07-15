@@ -340,7 +340,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         animationDuration: Duration(milliseconds: 1000),
                         offset: -0.5,
                         child: Text(
-                          "7-Day Forcast",
+                          "7-Day Air Quality Forecast",
                           style: GoogleFonts.openSans(
                               fontSize: 20,
                               fontWeight: FontWeight.w600,
