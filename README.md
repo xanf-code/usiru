@@ -1,3 +1,4 @@
+[![Codemagic build status](https://api.codemagic.io/apps/5f1000650906180013b0ffcc/5f1000650906180013b0ffcb/status_badge.svg)](https://codemagic.io/apps/5f1000650906180013b0ffcc/5f1000650906180013b0ffcb/latest_build)
 # usiru
 
 Bilangual Bangalore Air Index App
