@@ -20,6 +20,7 @@ class QualityCard extends StatelessWidget {
       const EdgeInsets.only(left: 22.0, right: 22, bottom: 10),
       child: DelayedDisplay(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           height: 100,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
@@ -45,8 +46,9 @@ class QualityCard extends StatelessWidget {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.only(left: 20.0),
+            padding: const EdgeInsets.all(8.0),
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -62,9 +64,6 @@ class QualityCard extends StatelessWidget {
                             fontSize: 24),
                       ),
                     ),
-                    SizedBox(
-                      height: 8,
-                    ),
                     DelayedDisplay(
                       slidingBeginOffset: Offset(-0.5, 1),
                       child: Text(
@@ -77,9 +76,6 @@ class QualityCard extends StatelessWidget {
                       ),
                     ),
                   ],
-                ),
-                SizedBox(
-                  width: 27,
                 ),
                 SizedBox(
                   height: 25,
@@ -102,9 +98,6 @@ class QualityCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
                   height: 25,
                   width: 30,
                   child: CachedNetworkImage(
@@ -122,9 +115,6 @@ class QualityCard extends StatelessWidget {
                       fontSize: 16,
                     ),
                   ),
-                ),
-                SizedBox(
-                  width: 20,
                 ),
                 SizedBox(
                   height: 25,

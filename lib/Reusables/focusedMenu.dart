@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:focused_menu/modals.dart';
@@ -70,434 +71,389 @@ class FocusedMenu extends StatelessWidget {
     return FocusedMenuHolder(
       menuItems: [
         FocusedMenuItem(
-          title: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Row(
-                children: [
-                  Text('Date',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold),),
-                  SizedBox(
-                    width: 51,
-                  ),
-                  Text('Min',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    width: 61,
-                  ),
-                  Text('Max',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
-                  SizedBox(
-                    width: 61,
-                  ),
-                  Text('Avg',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
-                ],
-              ),
-            ],
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Date',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold),),
+                Padding(
+                  padding: const EdgeInsets.only(right: 15.0),
+                  child: Text('Min',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: Text('Max',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 10.0),
+                  child: Text('Avg',style: GoogleFonts.ubuntu(fontWeight: FontWeight.bold)),
+                ),
+              ],
+            ),
           ),
         ),
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.onedate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.onedate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.onemin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.onemin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.onemax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.onemax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.oneavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.oneavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //1
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.twodate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.twodate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.twomin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.twomin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.twomax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.twomax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.twoavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.twoavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //2
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.threedate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.threedate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.threemin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.threemin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.threemax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.threemax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.threeavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.threeavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //3
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.fourdate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.fourdate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fourmin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fourmin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fourmax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fourmax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fouravg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fouravg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //4
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.fivedate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.fivedate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fivemin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fivemin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fivemax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fivemax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.fiveavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.fiveavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //5
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.sixdate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.sixdate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sixmin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sixmin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sixmax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sixmax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sixavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sixavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //6
         FocusedMenuItem(
-          title: Row(
-            children: [
-              Text(this.sevendate),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
+          title: Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(this.sevendate),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.green,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sixmin,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sixmin,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.red,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sevenmax,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sevenmax,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-              SizedBox(
-                width: 40,
-              ),
-              Container(
-                height: 30,
-                width: 50,
-                decoration: BoxDecoration(
-                  color: Colors.lightGreen,
-                  borderRadius: BorderRadius.circular(5),
+                Container(
+                  height: 30,
+                  width: 50,
+                  decoration: BoxDecoration(
+                    color: Colors.lightGreen,
+                    borderRadius: BorderRadius.circular(5),
+                  ),
+                  child: Center(
+                      child: Text(
+                        this.sevenavg,
+                        style: GoogleFonts.ubuntu(
+                            fontWeight: FontWeight.bold, color: Colors.white),
+                      )),
                 ),
-                child: Center(
-                    child: Text(
-                      this.sevenavg,
-                      style: GoogleFonts.ubuntu(
-                          fontWeight: FontWeight.bold, color: Colors.white),
-                    )),
-              ),
-            ],
+              ],
+            ),
           ),
         ), //7
       ],

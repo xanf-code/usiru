@@ -25,6 +25,7 @@ class Locations extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.only(bottom: 27.0,left: 10),
@@ -52,7 +53,6 @@ class Locations extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(width: 100,),
             Align(
               alignment: Alignment.bottomRight,
               child: Text(
