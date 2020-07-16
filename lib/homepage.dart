@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
 import 'package:usiru/Reusables/EndTileCard.dart';
+import 'package:usiru/Reusables/LocationCard.dart';
 import 'package:usiru/Reusables/chart.dart';
 import 'Reusables/Pollutant_card.dart';
 import 'Reusables/QualityCard.dart';
@@ -138,7 +139,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Value: 3.3,
                           BarVal: 0.3,
                           Emoji:
-                          "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif",
+                              "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif",
                         ),
                         onedate: '14/1',
                         onemin: '4.5',
@@ -176,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Value: 8,
                           BarVal: 0.47,
                           Emoji:
-                          "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif",
+                              "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif",
                         ),
                         onedate: '14/1',
                         onemin: '4.5',
@@ -208,13 +209,13 @@ class _MyHomePageState extends State<MyHomePage> {
                         sevenavg: '9.7',
                       ),
                       FocusedMenu(
-                        child:  PollutantCard(
+                        child: PollutantCard(
                           Name: 'Ozone',
                           Comments: 'Unhealthy',
                           Value: 3.30,
                           BarVal: 0.87,
                           Emoji:
-                          "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif",
+                              "https://media1.giphy.com/media/gfI2SFqrtxwf2Aw9x5/giphy.gif",
                         ),
                         onedate: '14/1',
                         onemin: '4.5',
@@ -252,7 +253,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Value: 20,
                           BarVal: 0.68,
                           Emoji:
-                          "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
+                              "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
                         ),
                         onedate: '14/1',
                         onemin: '4.5',
@@ -292,7 +293,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             Value: 4,
                             BarVal: 0.34,
                             Emoji:
-                            "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
+                                "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
                           ),
                           onedate: '14/1',
                           onemin: '4.5',
@@ -361,7 +362,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(left: 12.0, right: 12.0,top: 10),
+                padding:
+                    const EdgeInsets.only(left: 12.0, right: 12.0, top: 10),
                 child: ShowUpAnimation(
                   direction: Direction.vertical,
                   child: Graph(
@@ -375,24 +377,110 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                child: Padding(
+                  padding:
+                  const EdgeInsets.only(left: 28.0, right: 25,bottom: 18),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ShowUpAnimation(
+                        direction: Direction.horizontal,
+                        animationDuration: Duration(milliseconds: 1000),
+                        offset: -0.5,
+                        child: Text(
+                          "Location Based AQI",
+                          style: GoogleFonts.openSans(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black87),
+                        ),
+                      ),
+                      ShowUpAnimation(
+                        direction: Direction.horizontal,
+                        animationDuration: Duration(milliseconds: 1000),
+                        offset: 0.5,
+                        child: Icon(
+                          Icons.info_outline,
+                          color: Colors.black38,
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               Container(
                 height: 200,
                 child: PageView(
+                  scrollDirection: Axis.vertical,
+                  physics: BouncingScrollPhysics(),
                   children: [
-                    Container(child: Center(child: Text('1'),),),
-                    Container(child: Center(child: Text('2'),),),
-                    Container(child: Center(child: Text('3'),),),
-                    Container(child: Center(child: Text('4'),),),
-                    Container(child: Center(child: Text('5'),),),
-                    Container(child: Center(child: Text('6'),),),
-                    Container(child: Center(child: Text('7'),),),
-                    Container(child: Center(child: Text('8'),),),
-                    Container(child: Center(child: Text('9'),),),
-                    Container(child: Center(child: Text('10'),),),
+                    Locations(
+                      area: "BTM Layout",
+                      image: "https://www.karnataka.com/wp-content/uploads/2014/04/Madiwala_Lake_Bangalore.jpg",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Peenya",
+                      image: "https://www.tvdaijiworld.com/images6/allwyn_270819_peenya1.jpg",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Bapuji Nagar",
+                      image: "https://i2.wp.com/orissadiary.com/wp-content/uploads/2020/05/EXzaODJX0AEinXb.jpg?fit=1280%2C578&ssl=1",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Silk Board",
+                      image: "https://www.thehindu.com/news/cities/bangalore/4c3agu/article29578424.ece/ALTERNATES/LANDSCAPE_1200/3BGJAM",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Jayanagar",
+                      image: "https://lh3.googleusercontent.com/proxy/AR9mBVEKgi2saYWnxDi5vjcdGbgF2qoXdzNOXzOwfASez5-xWJgFLzVsT3EvFqjs-m7oAyANwcOzsqkBIXUt4EA_O0M",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Hebbal",
+                      image: "https://www.thehindu.com/news/cities/bangalore/1cdt8c/article26582205.ece/ALTERNATES/LANDSCAPE_1200/20BGHEBBALFLYOVER",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "Hombegowda",
+                      image: "https://teja14.kuikr.com/is/p/t20/430x200/public/images/gallery/locality_masthead/291/Bangalore_HombegowdaNagar_Masthead_5613c4e7ed0e0.jpg",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 97,
+                    ),
+                    Locations(
+                      area: "City Station",
+                      image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/36/bb/40/platform-no-5.jpg",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "SaneguravaHalli",
+                      image: "https://lh3.googleusercontent.com/proxy/ORuZCirHp6HnJxqwUxvJwtUzYh04bdx0ik6rYMONhTNkUazxx6LzopMxhn804btPHeVw9SGTrv1CfDpoBJIFoGzEBvNZ_a90ngg3XytnqoJivFjDYu69uHbKNQ",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
+                    Locations(
+                      area: "BWSSB",
+                      image: "https://www.deccanherald.com/sites/dh/files/article_images/2019/11/20/BWSSB-DH-1574194930.jpg",
+                      subtitle: "Air Quality is Moderate",
+                      aqi: 54,
+                    ),
                   ],
                 ),
-              ),//InitialDemo
+              ),
               Container(
                 child: Padding(
                   padding:

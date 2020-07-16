@@ -20,6 +20,13 @@ class UVCard extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(5,5),
+              blurRadius: 10,
+              color: Color(0xFFD3D3D3).withOpacity(.84),
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.only(
