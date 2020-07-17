@@ -19,7 +19,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   void initState() {
     super.initState();
@@ -56,7 +55,8 @@ class _home extends StatelessWidget {
                 cityname: 'Hombegowda Nagar',
                 mask:
                     "https://images.vexels.com/media/users/3/205468/isolated/preview/6495a5cc336d47f345c90e5b41e2b4c8-pitta-mask-illustration-by-vexels.png",
-                aqi: 135,
+                aqi: 56,
+                percent: 0.56,
                 lastUpdate: "8:36",
               ),
             ),
@@ -346,8 +346,7 @@ class _home extends StatelessWidget {
             ),
             Container(
               child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 28.0, right: 25, top: 20),
+                padding: const EdgeInsets.only(left: 28.0, right: 25, top: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -377,8 +376,7 @@ class _home extends StatelessWidget {
               ),
             ),
             Padding(
-              padding:
-                  const EdgeInsets.only(left: 12.0, right: 12.0, top: 10),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10),
               child: ShowUpAnimation(
                 direction: Direction.vertical,
                 child: Graph(
@@ -398,7 +396,7 @@ class _home extends StatelessWidget {
             Container(
               child: Padding(
                 padding:
-                const EdgeInsets.only(left: 28.0, right: 25,bottom: 18),
+                    const EdgeInsets.only(left: 28.0, right: 25, bottom: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -435,61 +433,71 @@ class _home extends StatelessWidget {
                 children: [
                   Locations(
                     area: "BTM Layout",
-                    image: "https://www.karnataka.com/wp-content/uploads/2014/04/Madiwala_Lake_Bangalore.jpg",
+                    image:
+                        "https://www.karnataka.com/wp-content/uploads/2014/04/Madiwala_Lake_Bangalore.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "Peenya",
-                    image: "https://www.tvdaijiworld.com/images6/allwyn_270819_peenya1.jpg",
+                    image:
+                        "https://www.tvdaijiworld.com/images6/allwyn_270819_peenya1.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "Bapuji Nagar",
-                    image: "https://i2.wp.com/orissadiary.com/wp-content/uploads/2020/05/EXzaODJX0AEinXb.jpg?fit=1280%2C578&ssl=1",
+                    image:
+                        "https://i2.wp.com/orissadiary.com/wp-content/uploads/2020/05/EXzaODJX0AEinXb.jpg?fit=1280%2C578&ssl=1",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "Silk Board",
-                    image: "https://www.thehindu.com/news/cities/bangalore/4c3agu/article29578424.ece/ALTERNATES/LANDSCAPE_1200/3BGJAM",
+                    image:
+                        "https://www.thehindu.com/news/cities/bangalore/4c3agu/article29578424.ece/ALTERNATES/LANDSCAPE_1200/3BGJAM",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "Jayanagar",
-                    image: "https://lh3.googleusercontent.com/proxy/AR9mBVEKgi2saYWnxDi5vjcdGbgF2qoXdzNOXzOwfASez5-xWJgFLzVsT3EvFqjs-m7oAyANwcOzsqkBIXUt4EA_O0M",
+                    image:
+                        "https://lh3.googleusercontent.com/proxy/AR9mBVEKgi2saYWnxDi5vjcdGbgF2qoXdzNOXzOwfASez5-xWJgFLzVsT3EvFqjs-m7oAyANwcOzsqkBIXUt4EA_O0M",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "Hebbal",
-                    image: "https://www.thehindu.com/news/cities/bangalore/1cdt8c/article26582205.ece/ALTERNATES/LANDSCAPE_1200/20BGHEBBALFLYOVER",
+                    image:
+                        "https://www.thehindu.com/news/cities/bangalore/1cdt8c/article26582205.ece/ALTERNATES/LANDSCAPE_1200/20BGHEBBALFLYOVER",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
-                    area: "Hombegowda",
-                    image: "https://teja14.kuikr.com/is/p/t20/430x200/public/images/gallery/locality_masthead/291/Bangalore_HombegowdaNagar_Masthead_5613c4e7ed0e0.jpg",
+                    area: "Hombegowda Nagar",
+                    image:
+                        "https://teja14.kuikr.com/is/p/t20/430x200/public/images/gallery/locality_masthead/291/Bangalore_HombegowdaNagar_Masthead_5613c4e7ed0e0.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 97,
                   ),
                   Locations(
-                    area: "City Station",
-                    image: "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/36/bb/40/platform-no-5.jpg",
+                    area: "City Railway Station",
+                    image:
+                        "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/36/bb/40/platform-no-5.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "SaneguravaHalli",
-                    image: "https://lh3.googleusercontent.com/proxy/ORuZCirHp6HnJxqwUxvJwtUzYh04bdx0ik6rYMONhTNkUazxx6LzopMxhn804btPHeVw9SGTrv1CfDpoBJIFoGzEBvNZ_a90ngg3XytnqoJivFjDYu69uHbKNQ",
+                    image:
+                        "https://lh3.googleusercontent.com/proxy/ORuZCirHp6HnJxqwUxvJwtUzYh04bdx0ik6rYMONhTNkUazxx6LzopMxhn804btPHeVw9SGTrv1CfDpoBJIFoGzEBvNZ_a90ngg3XytnqoJivFjDYu69uHbKNQ",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "BWSSB",
-                    image: "https://www.deccanherald.com/sites/dh/files/article_images/2019/11/20/BWSSB-DH-1574194930.jpg",
+                    image:
+                        "https://www.deccanherald.com/sites/dh/files/article_images/2019/11/20/BWSSB-DH-1574194930.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
@@ -498,8 +506,7 @@ class _home extends StatelessWidget {
             ),
             Container(
               child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 28.0, right: 25, top: 20),
+                padding: const EdgeInsets.only(left: 28.0, right: 25, top: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

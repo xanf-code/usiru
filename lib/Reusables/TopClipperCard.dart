@@ -1,3 +1,4 @@
+import 'package:counter_animation/counter_animation.dart';
 import 'package:delayed_display/delayed_display.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,8 +13,15 @@ class TopClipperCard extends StatelessWidget {
   final String mask;
   final int aqi;
   final String lastUpdate;
+  final double percent;
   const TopClipperCard({
-    Key key, this.title, this.cityname, this.mask, this.aqi, this.lastUpdate, this.Image,
+    Key key,
+    this.title,
+    this.cityname,
+    this.mask,
+    this.aqi,
+    this.lastUpdate,
+    this.Image, this.percent,
   }) : super(key: key);
 
   @override
@@ -93,17 +101,14 @@ class TopClipperCard extends StatelessWidget {
               ),
               CircularPercentIndicator(
                 backgroundWidth: 0,
-                animationDuration: 1100,
+                animationDuration: 3000,
                 restartAnimation: true,
                 animation: true,
                 radius: 220.0,
                 lineWidth: 15,
-                percent: 0.80,
-                linearGradient: LinearGradient(colors: [
-                  Colors.white,
-                  Colors.red,
-                  Colors.yellow
-                ]),
+                percent: this.percent,
+                linearGradient: LinearGradient(
+                    colors: [Colors.white, Colors.red, Colors.yellow]),
                 backgroundColor: Colors.white,
                 circularStrokeCap: CircularStrokeCap.round,
                 center: Column(
@@ -113,8 +118,7 @@ class TopClipperCard extends StatelessWidget {
                       children: <Widget>[
                         CachedNetworkImage(
                           color: Colors.white.withOpacity(0.5),
-                          imageUrl:
-                          this.mask,
+                          imageUrl: this.mask,
                           height: 40,
                           width: 40,
                         ),
@@ -123,12 +127,15 @@ class TopClipperCard extends StatelessWidget {
                         ),
                         DelayedDisplay(
                           slidingBeginOffset: Offset(0.5, 0),
-                          child: Text(
-                            '${this.aqi}',
-                            style: GoogleFonts.ubuntu(
+                          child: CounterAnimation(
+                            begin: 0,
+                            end: this.aqi,
+                            textStyle: GoogleFonts.ubuntu(
                                 fontSize: 40.0,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
+                            duration: 3,
+                            curve: Curves.easeOut,
                           ),
                         ),
                         SizedBox(
@@ -139,8 +146,7 @@ class TopClipperCard extends StatelessWidget {
                           child: Text(
                             'PM\u00B2\u2075',
                             style: GoogleFonts.ubuntu(
-                                fontSize: 20.0,
-                                color: Colors.white),
+                                fontSize: 20.0, color: Colors.white),
                           ),
                         ),
                       ],
