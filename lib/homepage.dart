@@ -373,7 +373,8 @@ class _Home extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10,bottom: 20),
+              padding: const EdgeInsets.only(
+                  left: 12.0, right: 12.0, top: 10, bottom: 20),
               child: ShowUpAnimation(
                 direction: Direction.vertical,
                 child: Graph(
