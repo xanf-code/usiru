@@ -1,3 +1,4 @@
+import 'package:flippable_box/flippable_box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,6 +6,7 @@ import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
 import 'package:usiru/Reusables/EndTileCard.dart';
 import 'package:usiru/Reusables/LocationCard.dart';
+import 'package:usiru/Reusables/TempCard.dart';
 import 'package:usiru/Reusables/chart.dart';
 import 'Reusables/Pollutant_card.dart';
 import 'Reusables/QualityCard.dart';
@@ -26,18 +28,19 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
+    return Scaffold(
         body: _Home(),
-      ),
-    );
+      );
   }
 }
 
-class _Home extends StatelessWidget {
-  const _Home({
-    Key key,
-  }) : super(key: key);
+class _Home extends StatefulWidget {
+  @override
+  __HomeState createState() => __HomeState();
+}
+
+class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
+  bool _isFlipped = false;
 
   @override
   Widget build(BuildContext context) {
@@ -60,11 +63,26 @@ class _Home extends StatelessWidget {
                 lastUpdate: "8:36",
               ),
             ),
-            QualityCard(
-              subtitle: 'UNSAFE',
-              temp: '29°',
-              humidity: '90',
-              wind: '4.1',
+            GestureDetector(
+              onLongPress: () => setState(() => _isFlipped = !_isFlipped),
+              child: FlippableBox(
+                front: Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width,
+                  child: QualityCard(
+                    subtitle: 'UNSAFE',
+                    temp: '29°',
+                    humidity: '90',
+                    wind: '4.1',
+                  ),
+                ),
+                back: Container(
+                    height: 300,
+                    width: MediaQuery.of(context).size.width,
+                    child: BackContainer()),
+                flipVt: true,
+                isFlipped: _isFlipped,
+              ),
             ),
             Container(
               child: Padding(

@@ -20,8 +20,6 @@ class QualityCard extends StatelessWidget {
       const EdgeInsets.only(left: 20.0, right: 20, bottom: 25),
       child: DelayedDisplay(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          height: 100,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
             boxShadow: [

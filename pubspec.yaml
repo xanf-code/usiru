@@ -41,6 +41,7 @@ dependencies:
   modal_bottom_sheet: ^0.2.0+1
   focused_menu: ^1.0.1
   counter_animation: ^0.0.2
+  flippable_box: ^1.0.6
 
 dev_dependencies:
   flutter_test:
