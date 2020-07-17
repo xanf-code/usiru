@@ -41,7 +41,6 @@ dependencies:
   modal_bottom_sheet: ^0.2.0+1
   focused_menu: ^1.0.1
   counter_animation: ^0.0.2
-  get: ^3.3.0
 
 dev_dependencies:
   flutter_test:

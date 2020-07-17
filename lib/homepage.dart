@@ -28,14 +28,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: _home(),
+        body: _Home(),
       ),
     );
   }
 }
 
-class _home extends StatelessWidget {
-  const _home({
+class _Home extends StatelessWidget {
+  const _Home({
     Key key,
   }) : super(key: key);
 
@@ -65,9 +65,6 @@ class _home extends StatelessWidget {
               temp: '29°',
               humidity: '90',
               wind: '4.1',
-            ),
-            SizedBox(
-              height: 15,
             ),
             Container(
               child: Padding(
@@ -376,7 +373,7 @@ class _home extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10),
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 10,bottom: 20),
               child: ShowUpAnimation(
                 direction: Direction.vertical,
                 child: Graph(
@@ -389,9 +386,6 @@ class _home extends StatelessWidget {
                   y7: 68,
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20,
             ),
             Container(
               child: Padding(
