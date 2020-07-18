@@ -29,8 +29,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: _Home(),
-      );
+      body: _Home(),
+    );
   }
 }
 
@@ -39,7 +39,7 @@ class _Home extends StatefulWidget {
   __HomeState createState() => __HomeState();
 }
 
-class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
+class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
   bool _isFlipped = false;
 
   @override
@@ -64,8 +64,10 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
               ),
             ),
             GestureDetector(
-              onLongPress: () => setState(() => _isFlipped = !_isFlipped),
+              onTap: () => setState(() => _isFlipped = !_isFlipped),
               child: FlippableBox(
+                duration: 0.5,
+                curve: Curves.fastLinearToSlowEaseIn,
                 front: Container(
                   height: 120,
                   width: MediaQuery.of(context).size.width,
@@ -77,9 +79,10 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
                   ),
                 ),
                 back: Container(
-                    height: 300,
-                    width: MediaQuery.of(context).size.width,
-                    child: BackContainer()),
+                  height: 400,
+                  width: MediaQuery.of(context).size.width,
+                  child: BackContainer(),
+                ),
                 flipVt: true,
                 isFlipped: _isFlipped,
               ),
@@ -475,7 +478,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
                   Locations(
                     area: "Jayanagar",
                     image:
-                        "https://lh3.googleusercontent.com/proxy/AR9mBVEKgi2saYWnxDi5vjcdGbgF2qoXdzNOXzOwfASez5-xWJgFLzVsT3EvFqjs-m7oAyANwcOzsqkBIXUt4EA_O0M",
+                        "https://th.thgim.com/migration_catalog/article11438369.ece/alternates/FREE_435/05BG_GANESH_TEMPLE_JAYANAGAR",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
@@ -496,14 +499,13 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin{
                   Locations(
                     area: "City Railway Station",
                     image:
-                        "https://media-cdn.tripadvisor.com/media/photo-m/1280/1a/36/bb/40/platform-no-5.jpg",
+                        "https://images.newindianexpress.com/uploads/user/imagelibrary/2019/1/25/w900X450/Mysuru.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
                   Locations(
                     area: "SaneguravaHalli",
-                    image:
-                        "https://lh3.googleusercontent.com/proxy/ORuZCirHp6HnJxqwUxvJwtUzYh04bdx0ik6rYMONhTNkUazxx6LzopMxhn804btPHeVw9SGTrv1CfDpoBJIFoGzEBvNZ_a90ngg3XytnqoJivFjDYu69uHbKNQ",
+                    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Devanahalli_Airport_area_in_Bangalore_Sky_view_115647.jpg",
                     subtitle: "Air Quality is Moderate",
                     aqi: 54,
                   ),
