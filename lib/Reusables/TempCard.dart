@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:usiru/Reusables/tempCardChart.dart';
 
 class BackContainer extends StatefulWidget {
   const BackContainer({
@@ -47,16 +50,80 @@ class _BackContainerState extends State<BackContainer> {
               padding: const EdgeInsets.all(12.0),
               child: Container(
                 color: Colors.transparent,
-                child: Center(
-                    child: CachedNetworkImage(imageUrl: "https://i.pinimg.com/originals/f7/62/69/f76269d4940355b003697ca5a0972314.png")),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child:Container(
-                color: Colors.transparent,
-                child: Center(
-                    child: CachedNetworkImage(imageUrl: "https://cdn.dribbble.com/users/54130/screenshots/6238979/ladder.png")),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12.0),
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        RichText(
+                          text: TextSpan(children: [
+                            TextSpan(
+                                text: "${298 - 279}°",
+                                style: GoogleFonts.openSans(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 90,
+                                    color: Colors.white)),
+                            TextSpan(
+                                text: "c",
+                                style: GoogleFonts.oxygen(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 50,
+                                    color: Colors.white))
+                          ]),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 18.0),
+                          child: Text(
+                            "Cloudy",
+                            style: GoogleFonts.ubuntu(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 18.0, top: 5),
+                          child: Text(
+                            "Carry an Umbrella",
+                            style: GoogleFonts.openSans(
+                                fontSize: 18,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white54),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 23.0, top: 8),
+                          child: Container(
+                            height: 3,
+                            width: 80,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5)),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: Center(
+                            child: Container(
+                              height: 135,
+                              width: 400,
+                              child: TempCardGraph(
+                                y1: 19.3,
+                                y2: 18.5,
+                                y3: 20.6,
+                                y4: 23.1,
+                                y5: 21.7,
+                                y6: 26,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
             Padding(
@@ -64,15 +131,10 @@ class _BackContainerState extends State<BackContainer> {
               child: Container(
                 color: Colors.transparent,
                 child: Center(
-                    child: CachedNetworkImage(imageUrl: "https://craft.atlassian.design/uploads/guidelines/marketing/illustrations/Confluence-Spot-Hero@2x_171013_112432.png")),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(12.0),
-              child:Container(
-                color: Colors.transparent,
-                child: Center(
-                    child: CachedNetworkImage(imageUrl: "https://maxcdn.icons8.com/app/uploads/2019/10/teamwork-illustration-2-1024x768.png")),
+                  child: CachedNetworkImage(
+                      imageUrl:
+                          "https://cdn.dribbble.com/users/54130/screenshots/6238979/ladder.png"),
+                ),
               ),
             ),
             Padding(
@@ -80,7 +142,32 @@ class _BackContainerState extends State<BackContainer> {
               child: Container(
                 color: Colors.transparent,
                 child: Center(
-                    child: CachedNetworkImage(imageUrl: "https://assets-global.website-files.com/5bcb5ee81fb2091a2ec550c7/5de6dd312578f7f8427f4e69_5cbe9efc8edd98b9c4d325c0_grape-pack-illustration-1.png")),
+                  child: CachedNetworkImage(
+                      imageUrl:
+                          "https://craft.atlassian.design/uploads/guidelines/marketing/illustrations/Confluence-Spot-Hero@2x_171013_112432.png"),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                color: Colors.transparent,
+                child: Center(
+                  child: CachedNetworkImage(
+                      imageUrl:
+                          "https://maxcdn.icons8.com/app/uploads/2019/10/teamwork-illustration-2-1024x768.png"),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Container(
+                color: Colors.transparent,
+                child: Center(
+                  child: CachedNetworkImage(
+                      imageUrl:
+                          "https://assets-global.website-files.com/5bcb5ee81fb2091a2ec550c7/5de6dd312578f7f8427f4e69_5cbe9efc8edd98b9c4d325c0_grape-pack-illustration-1.png"),
+                ),
               ),
             ),
           ],

@@ -109,7 +109,7 @@ class TopClipperCard extends StatelessWidget {
                 percent: this.percent,
                 linearGradient: LinearGradient(
                     colors: [Colors.white, Colors.red, Colors.yellow]),
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.yellow,
                 circularStrokeCap: CircularStrokeCap.round,
                 center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

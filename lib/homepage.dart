@@ -64,7 +64,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
               ),
             ),
             GestureDetector(
-              onTap: () => setState(() => _isFlipped = !_isFlipped),
+              onLongPress: () => setState(() => _isFlipped = !_isFlipped),
               child: FlippableBox(
                 duration: 0.5,
                 curve: Curves.fastLinearToSlowEaseIn,
