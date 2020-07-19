@@ -31,7 +31,7 @@ class TempCardGraph extends StatelessWidget {
             tooltipBgColor: Colors.transparent,
             getTooltipItem: (group, groupIndex, rod, rodIndex) {
               return BarTooltipItem(
-                rod.y.toString(),
+                "${rod.y.toString()}°",
                 GoogleFonts.ubuntu(
                     color: Colors.grey, fontWeight: FontWeight.bold),
               );
