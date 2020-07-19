@@ -21,7 +21,8 @@ class TopClipperCard extends StatelessWidget {
     this.mask,
     this.aqi,
     this.lastUpdate,
-    this.Image, this.percent,
+    this.Image,
+    this.percent,
   }) : super(key: key);
 
   @override
@@ -108,8 +109,13 @@ class TopClipperCard extends StatelessWidget {
                 lineWidth: 15,
                 percent: this.percent,
                 linearGradient: LinearGradient(
-                    colors: [Colors.white, Colors.red, Colors.yellow]),
-                backgroundColor: Colors.yellow,
+                  colors: [
+                    Color(0xFF833ab4),
+                    Color(0xFFfd1d1d),
+                    Color(0xFFfcb045)
+                  ],
+                ),
+                backgroundColor: Colors.white,
                 circularStrokeCap: CircularStrokeCap.round,
                 center: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

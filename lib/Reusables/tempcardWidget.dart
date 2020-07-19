@@ -7,7 +7,7 @@ class TempBackCard extends StatelessWidget {
   final double temp;
   final String tempType;
   final String subtitle;
-  final String date;
+  final int date;
   final String humidity;
   final String rain;
   final double maxtemp;
@@ -21,7 +21,23 @@ class TempBackCard extends StatelessWidget {
   final String day;
   final String comma;
   const TempBackCard({
-    Key key, this.temp, this.tempType, this.subtitle, this.date, this.humidity, this.rain, this.maxtemp, this.mintemp, this.y1, this.y2, this.y3, this.y4, this.y5, this.y6, this.day, this.comma,
+    Key key,
+    this.temp,
+    this.tempType,
+    this.subtitle,
+    this.date,
+    this.humidity,
+    this.rain,
+    this.maxtemp,
+    this.mintemp,
+    this.y1,
+    this.y2,
+    this.y3,
+    this.y4,
+    this.y5,
+    this.y6,
+    this.day,
+    this.comma,
   }) : super(key: key);
 
   @override
@@ -67,8 +83,7 @@ class TempBackCard extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding:
-                        const EdgeInsets.only(left: 8.0, top: 5),
+                        padding: const EdgeInsets.only(left: 8.0, top: 5),
                         child: Text(
                           this.subtitle,
                           style: GoogleFonts.openSans(
@@ -78,8 +93,7 @@ class TempBackCard extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding:
-                        const EdgeInsets.only(left: 10.0, top: 8),
+                        padding: const EdgeInsets.only(left: 10.0, top: 8,bottom: 5),
                         child: Container(
                           height: 3,
                           width: 70,
@@ -97,8 +111,7 @@ class TempBackCard extends StatelessWidget {
                       width: 160,
                       color: Colors.transparent,
                       child: Column(
-                        mainAxisAlignment:
-                        MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
@@ -107,33 +120,38 @@ class TempBackCard extends StatelessWidget {
                               children: [
                                 Container(
                                     child: RichText(
-                                      text: TextSpan(
-                                          children: [
-                                            TextSpan(
-                                              text: this.day,style:  GoogleFonts.openSans(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,fontSize: 18),
-                                            ),
-                                            TextSpan(
-                                              text: "${this.comma} ",style:  GoogleFonts.openSans(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.bold,fontSize: 18),
-                                            ),
-                                            TextSpan(
-                                              text: this.date,style:  GoogleFonts.openSans(
-                                                color: Colors.white54,
-                                                fontWeight: FontWeight.normal,fontSize: 16),
-                                            ),
-                                          ]
-                                      ),
-                                    )
-                                ),
+                                  text: TextSpan(children: [
+                                    TextSpan(
+                                      text: this.day,
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                    ),
+                                    TextSpan(
+                                      text: "${this.comma} ",
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18),
+                                    ),
+                                    TextSpan(
+                                      text:
+                                          "${DateTime.fromMillisecondsSinceEpoch(date * 1000)}"
+                                              .replaceRange(10, 23, "")
+                                              .replaceAll("-", '/').replaceAll('2020/', ""),
+                                      style: GoogleFonts.openSans(
+                                          color: Colors.white54,
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 16),
+                                    ),
+                                  ]),
+                                )),
                               ],
                             ),
                           ),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Row(
                                 children: [
@@ -142,7 +160,7 @@ class TempBackCard extends StatelessWidget {
                                     width: 25,
                                     child: CachedNetworkImage(
                                       imageUrl:
-                                      "https://images.vexels.com/media/users/3/146228/isolated/preview/685088eecf6250447d473e7ae3b0a5da-blue-water-drops-icon-by-vexels.png",
+                                          "https://images.vexels.com/media/users/3/146228/isolated/preview/685088eecf6250447d473e7ae3b0a5da-blue-water-drops-icon-by-vexels.png",
                                       color: Colors.purpleAccent,
                                     ),
                                   ),
@@ -165,7 +183,7 @@ class TempBackCard extends StatelessWidget {
                                     width: 25,
                                     child: CachedNetworkImage(
                                       imageUrl:
-                                      "https://freesvg.org/img/1339577112.png",
+                                          "https://freesvg.org/img/1339577112.png",
                                       color: Colors.red,
                                     ),
                                   ),
@@ -184,8 +202,7 @@ class TempBackCard extends StatelessWidget {
                             ],
                           ),
                           Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceAround,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Row(
                                 children: [
@@ -194,7 +211,7 @@ class TempBackCard extends StatelessWidget {
                                     width: 25,
                                     child: CachedNetworkImage(
                                       imageUrl:
-                                      "https://www.freeiconspng.com/uploads/temperature-icon-png-11.png",
+                                          "https://www.freeiconspng.com/uploads/temperature-icon-png-11.png",
                                       color: Colors.green,
                                     ),
                                   ),
@@ -217,7 +234,7 @@ class TempBackCard extends StatelessWidget {
                                     width: 25,
                                     child: CachedNetworkImage(
                                       imageUrl:
-                                      "https://cdn4.iconfinder.com/data/icons/weather-300/550/downtemprature-512.png",
+                                          "https://cdn4.iconfinder.com/data/icons/weather-300/550/downtemprature-512.png",
                                       color: Colors.green,
                                     ),
                                   ),

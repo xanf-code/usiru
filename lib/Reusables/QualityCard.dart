@@ -75,64 +75,76 @@ class QualityCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 25,
-                  width: 30,
-                  child: CachedNetworkImage(
-                    imageUrl:
-                    'https://icon-library.com/images/temp-icon/temp-icon-26.jpg',
-                    color: Colors.white70,
-                  ),
-                ),
-                ShowUpAnimation(
-                  direction: Direction.horizontal,
-                  child: Text(
-                    this.temp.toString(),
-                    style: GoogleFonts.openSans(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 25,
+                      width: 30,
+                      child: CachedNetworkImage(
+                        imageUrl:
+                        'https://icon-library.com/images/temp-icon/temp-icon-26.jpg',
+                        color: Colors.white70,
+                      ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: 25,
-                  width: 30,
-                  child: CachedNetworkImage(
-                    imageUrl: 'https://www.freepngimg.com/thumb/water/76727-vector-of-drop-water-drop-water-free-download-image-thumb.png',
-                    color: Colors.white70,
-                  ),
-                ),
-                ShowUpAnimation(
-                  direction: Direction.horizontal,
-                  child: Text(
-                    this.humidity.toString(),
-                    style: GoogleFonts.openSans(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      child: Text(
+                        this.temp.toString(),
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-                SizedBox(
-                  height: 25,
-                  width: 30,
-                  child: CachedNetworkImage(
-                    imageUrl:
-                    'https://www.pngrepo.com/download/140232/wind.png',
-                    color: Colors.white70,
-                  ),
-                ),
-                ShowUpAnimation(
-                  direction: Direction.horizontal,
-                  child: Text(
-                    ' ${this.wind.toString()} Kmph',
-                    style: GoogleFonts.openSans(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 25,
+                      width: 30,
+                      child: CachedNetworkImage(
+                        imageUrl: 'https://www.freepngimg.com/thumb/water/76727-vector-of-drop-water-drop-water-free-download-image-thumb.png',
+                        color: Colors.white70,
+                      ),
                     ),
-                  ),
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      child: Text(
+                        this.humidity.toString(),
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 25,
+                      width: 30,
+                      child: CachedNetworkImage(
+                        imageUrl:
+                        'https://www.pngrepo.com/download/140232/wind.png',
+                        color: Colors.white70,
+                      ),
+                    ),
+                    ShowUpAnimation(
+                      direction: Direction.horizontal,
+                      child: Text(
+                        ' ${this.wind.toString()} Kmph',
+                        style: GoogleFonts.openSans(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

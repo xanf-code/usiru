@@ -56,7 +56,7 @@ class UVCard extends StatelessWidget {
                     arcType: ArcType.HALF,
                     //startAngle: 275.0,
                     radius: 100.0,
-                    lineWidth: 12.0,
+                    lineWidth: 10.0,
                     percent: this.percent,
                     animationDuration: 1500,
                     backgroundColor: Colors.white,

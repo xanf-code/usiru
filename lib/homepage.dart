@@ -14,6 +14,8 @@ import 'Reusables/TopClipperCard.dart';
 import 'Reusables/UVCard.dart';
 import 'Reusables/Maps.dart';
 import 'Reusables/focusedMenu.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -40,6 +42,25 @@ class _Home extends StatefulWidget {
 }
 
 class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
+  var temp;
+  var humidity;
+  var windspeed;
+
+  Future getWeather()async{
+    http.Response response = await http.get("https://api.openweathermap.org/data/2.5/onecall?lat=12.98&lon=77.6&%20exclude=daily&units=metric&appid=7190713792495b31e2f95f0d3c6b2688");
+    var results = jsonDecode(response.body);
+    setState(() {
+      this.temp = results['current']['temp'];
+      this.humidity = results['current']['humidity'];
+      this.windspeed =  results['current']['wind_speed'];
+    });
+  }
+
+  @override
+  void initState() {
+    this.getWeather();
+    super.initState();
+  }
   bool _isFlipped = false;
 
   @override
@@ -65,7 +86,6 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
           GestureDetector(
             onTap: () => setState(() => _isFlipped = !_isFlipped),
             child: FlippableBox(
-
               duration: 0.5,
               curve: Curves.fastLinearToSlowEaseIn,
               front: Container(
@@ -73,9 +93,9 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
                 width: MediaQuery.of(context).size.width,
                 child: QualityCard(
                   subtitle: 'UNSAFE',
-                  temp: '29°',
-                  humidity: '90',
-                  wind: '4.1',
+                  temp: '${temp}°c',
+                  humidity: '${humidity}%',
+                  wind: windspeed.toString(),
                 ),
               ),
               back: Container(
@@ -133,7 +153,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
                       child: UVCard(
                         name: 'UV Index',
                         value: 7.3,
-                        percent: 0.85,
+                        percent: 0.70,
                       ),
                       onedate: '14/1',
                       onemin: '4.5',
