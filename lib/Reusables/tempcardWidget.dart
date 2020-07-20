@@ -18,8 +18,6 @@ class TempBackCard extends StatelessWidget {
   final double y4;
   final double y5;
   final double y6;
-  final String day;
-  final String comma;
   const TempBackCard({
     Key key,
     this.temp,
@@ -36,8 +34,6 @@ class TempBackCard extends StatelessWidget {
     this.y4,
     this.y5,
     this.y6,
-    this.day,
-    this.comma,
   }) : super(key: key);
 
   @override
@@ -93,7 +89,8 @@ class TempBackCard extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 10.0, top: 8,bottom: 5),
+                        padding: const EdgeInsets.only(
+                            left: 10.0, top: 8, bottom: 5),
                         child: Container(
                           height: 3,
                           width: 70,
@@ -115,39 +112,17 @@ class TempBackCard extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(left: 8.0),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                    child: RichText(
-                                  text: TextSpan(children: [
-                                    TextSpan(
-                                      text: this.day,
-                                      style: GoogleFonts.openSans(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                    ),
-                                    TextSpan(
-                                      text: "${this.comma} ",
-                                      style: GoogleFonts.openSans(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 18),
-                                    ),
-                                    TextSpan(
-                                      text:
-                                          "${DateTime.fromMillisecondsSinceEpoch(date * 1000)}"
-                                              .replaceRange(10, 23, "")
-                                              .replaceAll("-", '/').replaceAll('2020/', ""),
-                                      style: GoogleFonts.openSans(
-                                          color: Colors.white54,
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: 16),
-                                    ),
-                                  ]),
-                                )),
-                              ],
+                            child: Container(
+                              child: Text(
+                                "${DateTime.fromMillisecondsSinceEpoch(date * 1000)}"
+                                    .replaceRange(10, 23, "")
+                                    .replaceAll("-", '/')
+                                    .replaceAll('2020/', ""),
+                                style: GoogleFonts.openSans(
+                                    color: Colors.white54,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 16),
+                              ),
                             ),
                           ),
                           Row(
