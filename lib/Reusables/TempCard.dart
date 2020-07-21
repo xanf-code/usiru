@@ -27,7 +27,7 @@ class _BackContainerState extends State<BackContainer> {
       data = resBody['daily'];
       hour = resBody['hourly'];
     });
-    return "SuccessxD";
+    return "success";
   }
 
   @override
