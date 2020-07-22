@@ -87,8 +87,7 @@ class TopClipperCard extends StatelessWidget {
                     direction: Direction.horizontal,
                     animationDuration: Duration(milliseconds: 1200),
                     offset: 0.5,
-                    child: Text(
-                      this.cityname,
+                    child: Text(this.cityname,
                       style: GoogleFonts.ubuntu(
                           color: Colors.white.withOpacity(0.6),
                           fontSize: 15,

@@ -419,7 +419,7 @@ class FocusedMenu extends StatelessWidget {
                   ),
                   child: Center(
                       child: Text(
-                        this.sixmin,
+                        this.sevenmin,
                         style: GoogleFonts.ubuntu(
                             fontWeight: FontWeight.bold, color: Colors.white),
                       )),
