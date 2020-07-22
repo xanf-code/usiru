@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
+import 'package:usiru/Model/AQIapi.dart';
 import 'package:usiru/Reusables/EndTileCard.dart';
 import 'package:usiru/Reusables/LocationCard.dart';
 import 'package:usiru/Reusables/TempCard.dart';
@@ -56,9 +57,20 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
     });
   }
 
+  List<Aqi> _listValues= List();
+  void APIData()async{
+    var response = await http.get('https://api.waqi.info/feed/bangalore/?token=5c3ffa389d47509ba96a80b8336d0995b30aed0c');
+    if(response.statusCode == 200){
+      var Data = Aqi.fromJson(json.decode(response.body));
+      setState(() {
+        _listValues.add(Data);
+      });
+    }
+  }
 
   @override
   void initState() {
+    APIData();
     this.getWeather();
     super.initState();
   }
@@ -66,7 +78,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return _listValues.length != 0? SingleChildScrollView(
       physics: ClampingScrollPhysics(),
       child: Column(
         children: [
@@ -76,12 +88,12 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
               Image:
               "https://cdn.dribbble.com/users/1118956/screenshots/6608006/bnglr-final.jpg",
               title: 'Bengaluru, Karnataka',
-              cityname: 'Hombegowda Nagar',
+              cityname: _listValues[0].data.city.name.replaceAll(', Bengaluru, India', ''),
               mask:
               "https://images.vexels.com/media/users/3/205468/isolated/preview/6495a5cc336d47f345c90e5b41e2b4c8-pitta-mask-illustration-by-vexels.png",
-              aqi: 56,
-              percent: 56/100,
-              lastUpdate: "8:36",
+              aqi: _listValues[0].data.aqi,
+              percent: _listValues[0].data.aqi/100,
+              lastUpdate: _listValues[0].data.debug.sync.toLocal().toString().replaceRange(0, 10, '').replaceRange(5, 12, ''),
             ),
           ),
           GestureDetector(
@@ -589,6 +601,6 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
           ),
         ],
       ),
-    );
+    ) : Center(child: CircularProgressIndicator());
   }
 }

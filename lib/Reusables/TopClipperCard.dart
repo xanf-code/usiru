@@ -175,7 +175,7 @@ class TopClipperCard extends StatelessWidget {
                       width: 10,
                     ),
                     Text(
-                      'Last Updated ${this.lastUpdate}',
+                      'Last Updated${this.lastUpdate}',
                       style: GoogleFonts.ubuntu(
                           color: Colors.white.withOpacity(0.6),
                           fontSize: 15,
