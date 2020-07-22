@@ -136,7 +136,7 @@ class QualityCard extends StatelessWidget {
                     ShowUpAnimation(
                       direction: Direction.horizontal,
                       child: Text(
-                        ' ${this.wind.toString()} Kmph',
+                        ' ${this.wind.toString()} Kph',
                         style: GoogleFonts.openSans(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,

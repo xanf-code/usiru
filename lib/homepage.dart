@@ -56,6 +56,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
     });
   }
 
+
   @override
   void initState() {
     this.getWeather();
@@ -79,7 +80,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
               mask:
               "https://images.vexels.com/media/users/3/205468/isolated/preview/6495a5cc336d47f345c90e5b41e2b4c8-pitta-mask-illustration-by-vexels.png",
               aqi: 56,
-              percent: 0.56,
+              percent: 56/100,
               lastUpdate: "8:36",
             ),
           ),
