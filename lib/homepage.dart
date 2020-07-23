@@ -11,6 +11,7 @@ import 'package:usiru/Reusables/EndTileCard.dart';
 import 'package:usiru/Reusables/LocationCard.dart';
 import 'package:usiru/Reusables/TempCard.dart';
 import 'package:usiru/Reusables/chart.dart';
+import 'package:usiru/Widgets/LocationAQI.dart';
 import 'Reusables/Pollutant_card.dart';
 import 'Reusables/QualityCard.dart';
 import 'Reusables/TopClipperCard.dart';
@@ -596,85 +597,7 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
                     ),
                   ),
                 ),
-                Container(
-                  height: 200,
-                  child: PageView(
-                    scrollDirection: Axis.vertical,
-                    physics: BouncingScrollPhysics(),
-                    children: [
-                      Locations(
-                        area: "BTM Layout",
-                        image:
-                            "https://www.karnataka.com/wp-content/uploads/2014/04/Madiwala_Lake_Bangalore.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Peenya",
-                        image:
-                            "https://www.tvdaijiworld.com/images6/allwyn_270819_peenya1.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Bapuji Nagar",
-                        image:
-                            "https://i2.wp.com/orissadiary.com/wp-content/uploads/2020/05/EXzaODJX0AEinXb.jpg?fit=1280%2C578&ssl=1",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Silk Board",
-                        image:
-                            "https://www.thehindu.com/news/cities/bangalore/4c3agu/article29578424.ece/ALTERNATES/LANDSCAPE_1200/3BGJAM",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Jayanagar",
-                        image:
-                            "https://th.thgim.com/migration_catalog/article11438369.ece/alternates/FREE_435/05BG_GANESH_TEMPLE_JAYANAGAR",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Hebbal",
-                        image:
-                            "https://www.thehindu.com/news/cities/bangalore/1cdt8c/article26582205.ece/ALTERNATES/LANDSCAPE_1200/20BGHEBBALFLYOVER",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "Hombegowda Nagar",
-                        image:
-                            "https://teja14.kuikr.com/is/p/t20/430x200/public/images/gallery/locality_masthead/291/Bangalore_HombegowdaNagar_Masthead_5613c4e7ed0e0.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 97,
-                      ),
-                      Locations(
-                        area: "City Railway Station",
-                        image:
-                            "https://images.newindianexpress.com/uploads/user/imagelibrary/2019/1/25/w900X450/Mysuru.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "SaneguravaHalli",
-                        image:
-                            "https://upload.wikimedia.org/wikipedia/commons/0/01/Devanahalli_Airport_area_in_Bangalore_Sky_view_115647.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                      Locations(
-                        area: "BWSSB",
-                        image:
-                            "https://www.deccanherald.com/sites/dh/files/article_images/2019/11/20/BWSSB-DH-1574194930.jpg",
-                        subtitle: "Air Quality is Moderate",
-                        aqi: 54,
-                      ),
-                    ],
-                  ),
-                ),
+                LocationAQIwidget(),
                 Container(
                   child: Padding(
                     padding:

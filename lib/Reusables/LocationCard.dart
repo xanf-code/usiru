@@ -6,7 +6,7 @@ class Locations extends StatelessWidget {
   final String area;
   final String subtitle;
   final String image;
-  final int aqi;
+  final String aqi;
   const Locations({
     Key key, this.area, this.subtitle, this.image, this.aqi,
   }) : super(key: key);
