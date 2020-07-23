@@ -43,6 +43,7 @@ dependencies:
   counter_animation: ^0.0.2
   flippable_box: ^1.0.6
   http: ^0.12.2
+  fluttertoast: ^7.0.1
 
 dev_dependencies:
   flutter_test:

@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flippable_box/flippable_box.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:show_up_animation/show_up_animation.dart';
 import 'package:usiru/Custom/clipper.dart';
@@ -378,21 +379,43 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
                             sevenavg: '-',
                           ),
                         ),
-                        PollutantCard(
-                          Name: 'Carbon Monoxide',
-                          Comments: 'Average',
-                          Value: _listValues[0].data.iaqi.co.v,
-                          BarVal: _listValues[0].data.iaqi.co.v / 10,
-                          Emoji:
-                              "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif",
+                        GestureDetector(
+                          onLongPress: ()=> Fluttertoast.showToast(
+                              msg: "No Data Available",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                              fontSize: 16.0
+                          ),
+                          child: PollutantCard(
+                            Name: 'Carbon Monoxide',
+                            Comments: 'Average',
+                            Value: _listValues[0].data.iaqi.co.v,
+                            BarVal: _listValues[0].data.iaqi.co.v / 10,
+                            Emoji:
+                                "https://media1.giphy.com/media/h4OGa0npayrJX2NRPT/source.gif",
+                          ),
                         ),
-                        PollutantCard(
-                          Name: 'Nitrogen Dioxide',
-                          Comments: 'Moderate',
-                          Value: _listValues[0].data.iaqi.no2.v,
-                          BarVal: _listValues[0].data.iaqi.no2.v / 10,
-                          Emoji:
-                              "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif",
+                        GestureDetector(
+                          onLongPress: ()=> Fluttertoast.showToast(
+                              msg: "No Data Available",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                              fontSize: 16.0
+                          ),
+                          child: PollutantCard(
+                            Name: 'Nitrogen Dioxide',
+                            Comments: 'Moderate',
+                            Value: _listValues[0].data.iaqi.no2.v,
+                            BarVal: _listValues[0].data.iaqi.no2.v / 10,
+                            Emoji:
+                                "https://i.pinimg.com/originals/0e/3e/e5/0e3ee551876e1ad2a39f89e4adf9168a.gif",
+                          ),
                         ),
                         FocusedMenu(
                           child: PollutantCard(
@@ -470,13 +493,24 @@ class __HomeState extends State<_Home> with SingleTickerProviderStateMixin {
                           sevenmax: '3',
                           sevenavg: '9.7',
                         ),
-                        PollutantCard(
-                          Name: 'Sulfur Dioxide',
-                          Comments: 'Healthy',
-                          Value: _listValues[0].data.iaqi.so2.v,
-                          BarVal: _listValues[0].data.iaqi.so2.v / 10,
-                          Emoji:
-                              "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
+                        GestureDetector(
+                          onLongPress: ()=> Fluttertoast.showToast(
+                              msg: "No Data Available",
+                              toastLength: Toast.LENGTH_SHORT,
+                              gravity: ToastGravity.BOTTOM,
+                              timeInSecForIosWeb: 1,
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                              fontSize: 16.0
+                          ),
+                          child: PollutantCard(
+                            Name: 'Sulfur Dioxide',
+                            Comments: 'Healthy',
+                            Value: _listValues[0].data.iaqi.so2.v,
+                            BarVal: _listValues[0].data.iaqi.so2.v / 10,
+                            Emoji:
+                                "https://media0.giphy.com/media/QWvra259h4LCvdJnxP/giphy.gif",
+                          ),
                         ),
                       ],
                     ),
