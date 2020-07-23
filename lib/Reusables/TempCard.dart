@@ -75,8 +75,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[1]['dt'],
                 humidity: "${data==null? 0:data[1]['humidity'].toString()}",
                 rain: "${data==null? 0:data[1]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[1]['temp']['max'],
-                mintemp: data==null? 0:data[1]['temp']['min'],
+                maxtemp: data==null? 0:data[1]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[1]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[21]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[24]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[27]['temp'].toDouble(),//12pm
@@ -93,8 +93,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[2]['dt'],
                 humidity: "${data==null? 0:data[2]['humidity'].toString()}",
                 rain: "${data==null? 0:data[2]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[2]['temp']['max'],
-                mintemp: data==null? 0:data[2]['temp']['min'],
+                maxtemp: data==null? 0:data[2]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[2]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[45]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[7]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[1]['temp'].toDouble(),//12pm
@@ -111,8 +111,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[3]['dt'],
                 humidity: "${data==null? 0:data[3]['humidity'].toString()}",
                 rain: "${data==null? 0:data[3]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[3]['temp']['max'],
-                mintemp: data==null? 0:data[3]['temp']['min'],
+                maxtemp: data==null? 0:data[3]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[3]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[10]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[21]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[17]['temp'].toDouble(),//12pm
@@ -129,8 +129,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[4]['dt'],
                 humidity: "${data==null? 0:data[4]['humidity'].toString()}",
                 rain: "${data==null? 0:data[4]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[4]['temp']['max'],
-                mintemp: data==null? 0:data[4]['temp']['min'],
+                maxtemp: data==null? 0:data[4]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[4]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[20]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[13]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[31]['temp'].toDouble(),//12pm
@@ -147,8 +147,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[5]['dt'],
                 humidity: "${data==null? 0:data[5]['humidity'].toString()}",
                 rain: "${data==null? 0:data[5]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[5]['temp']['max'],
-                mintemp: data==null? 0:data[5]['temp']['min'],
+                maxtemp: data==null? 0:data[5]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[5]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[40]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[44]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[19]['temp'].toDouble(),//12pm
@@ -165,8 +165,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[6]['dt'],
                 humidity: "${data==null? 0:data[6]['humidity'].toString()}",
                 rain: "${data==null? 0:data[6]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[6]['temp']['max'],
-                mintemp: data==null? 0:data[6]['temp']['min'],
+                maxtemp: data==null? 0:data[6]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[6]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[30]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[23]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[36]['temp'].toDouble(),//12pm
@@ -183,8 +183,8 @@ class _BackContainerState extends State<BackContainer> {
                 date: data==null? 0:data[7]['dt'],
                 humidity: "${data==null? 0:data[7]['humidity'].toString()}",
                 rain: "${data==null? 0:data[7]['clouds'].toString()}",
-                maxtemp: data==null? 0:data[7]['temp']['max'],
-                mintemp: data==null? 0:data[7]['temp']['min'],
+                maxtemp: data==null? 0:data[7]['temp']['max'].toDouble(),
+                mintemp: data==null? 0:data[7]['temp']['min'].toDouble(),
                 y1: hour==null? 0: hour[3]['temp'].toDouble(),//6:00am
                 y2: hour==null? 0: hour[33]['temp'].toDouble(),//9:00am
                 y3: hour==null? 0: hour[6]['temp'].toDouble(),//12pm
